@@ -1,0 +1,15 @@
+.main{
+    grid-area: left_men;
+    background-color: aquamarine;
+    height: 100vh;
+    display: grid;
+}
+.item{
+    display: grid;
+    text-align: left;
+    margin: auto;
+    color: #ffffff;
+}
+.active {
+    color: gold;
+}

@@ -9,38 +9,6 @@ ul li  {
           "head head "
           "left_men  main_cont ";
 }
-.Header {
-  grid-area: head;
-  background-color: green;
-  margin-bottom: 10px;
-}
-.img_logo{
-  display: block;
-  width: 60px;
-  height: 50px;
-}
 
-.Navbar{
-  grid-area: left_men;
-  background-color: aquamarine;
-  height: 100vh;
-  display: grid;
-  }
-.Navbar_nav{
-  display: grid;
-  text-align: left;
-  margin: auto;
-}
-.Profile{
-  grid-area: main_cont;
-  margin-left: 10px;
-  background-color: lightgreen;
-}
-.Profile_Content_img{
-  width: 100%;
-  max-height: 60vh;
-}
-.User_photo img{
-  width: 100px;
-  height: 100px;
-}
+
+
