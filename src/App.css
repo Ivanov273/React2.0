@@ -10,5 +10,9 @@ ul li  {
           "left_men  main_cont ";
 }
 
-
+.contain{
+  grid-area: main_cont;
+  margin-left: 10px;
+  background-color: lightgreen;
+}
 

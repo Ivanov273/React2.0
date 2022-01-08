@@ -3,12 +3,14 @@
     background-color: aquamarine;
     height: 100vh;
     display: grid;
+    padding-left: 20px;
 }
-.item{
+.item {
     display: grid;
     text-align: left;
     margin: auto;
     color: #ffffff;
+    text-decoration: none;
 }
 .active {
     color: gold;
