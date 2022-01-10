@@ -3,7 +3,7 @@
     grid-template-columns: 2fr 10fr;
 }
 .dialog{
-
+    color: black;
     margin: 20px;
     text-align: center;
 }

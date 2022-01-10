@@ -2,7 +2,10 @@ import React from 'react';
 import s from './MyPost.module.css'
 import Post from "./Post/Post";
 
-const MyPost = () => {
+const MyPost = (props) => {
+
+    let PostMass = props.PostData.map(p=><Post message={p.text} like={p.like} />)
+
     return (
         <div>
             <div>
@@ -10,12 +13,7 @@ const MyPost = () => {
                 <button>добавить</button>
                 <button>удалить</button>
             </div>
-            <Post message={'Привет пост 1'} like={5} />
-            <Post message={'Привет пост 2'} like={34} />
-            <Post message={'Привет пост 3'} like={15} />
-            <Post message={'Привет пост 4'} like={25} />
-            <Post message={'Привет пост 5'} like={35} />
-
+            {PostMass}
         </div>
     );
 }
