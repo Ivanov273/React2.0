@@ -9,8 +9,8 @@ import News from "./Component/News/News";
 import Music from "./Component/Music/Music";
 
 const App = (props) => {
-
-
+//console.log(props.addMessage)
+  //  props.addMessage
     return (
         <BrowserRouter>
             <div className="wrapper">
@@ -18,7 +18,7 @@ const App = (props) => {
                 <Navbar SideBarData={props.state.SideBar.SideBarData} />
                 <div className={"contain"}>
                     <Routes>
-                    <Route path='/profile' element={<Profile PostData={props.state.ProfilePage.PostData}/>}/>
+                    <Route path='/profile' element={<Profile PostData={props.state.ProfilePage.PostData} addPost={props.addPost} />}/>
                     <Route path='/dialogs*'   element={<Dialogs DialogData={props.state.DialogPage.DialogData} TextData={props.state.DialogPage.TextData} />} />
                     <Route path='/news' element={<News/>}/>
                     <Route path='/music' element={<Music/>}/>
