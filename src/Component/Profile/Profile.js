@@ -10,6 +10,7 @@ const Profile = (props) => {
         <div>
             <ProfileInfo/>
             <MyPost PostData={props.PostData} addPost={props.addPost} />
+            csacsacsacsacsacsaca
         </div>
     );
 }
