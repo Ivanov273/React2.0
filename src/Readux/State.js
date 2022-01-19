@@ -1,6 +1,10 @@
 import React from 'react'
-import {renderIndex} from './../render'
-let state = {
+
+let store = {
+    _subscriber() {
+        alert('adafafd')
+    },
+    _state: {
         DialogPage: {
             TextData: [
                 {id: 1, text: '4444444'},
@@ -25,7 +29,8 @@ let state = {
                 {id: 5, text: 'acascascascsac', like: 22},
                 {id: 6, text: 'acascascascsac', like: 22},
                 {id: 7, text: 'acascavdvdvdscascsac', like: 22}
-            ]
+            ],
+            newPostText: ''
         },
         SideBar: {
             SideBarData:
@@ -47,19 +52,32 @@ let state = {
                         img: 'https://img.gazeta.ru/files3/29/6856029/Ted-2-2606346-pic700-700x467-79410.jpg'
                     }
                 ]
-        },
+        }
+    },
+    getState() {
+        return this._state
+    },
+    setState(observer) {
 
+        this._subscriber = observer
+    },
+    dispatch(action) {
+        if (action.type === 'ADD-POST') {
+            let newtext = {
+                id: 9,
+                text: this._state.ProfilePage.newPostText,
+                like: 5555555555
+            }
+            this._state.ProfilePage.PostData.push(newtext)
+            this._state.ProfilePage.newPostText = ''
+            this._subscriber(this._state)
+        } else if (action.type === 'UPDATE-NEW-TEXT') {
+            this._state.ProfilePage.newPostText = action.newText
+            this._subscriber(this._state)
+        }
     }
-
-export let addPost = (n) => {
-    let newtext = {
-        id: 9,
-        text: n,
-        like: 5555555555
-    }
-    state.ProfilePage.PostData.push(newtext)
-    renderIndex(state)
 
 }
 
-export default state
+
+export default store

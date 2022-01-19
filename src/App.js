@@ -18,7 +18,7 @@ const App = (props) => {
                 <Navbar SideBarData={props.state.SideBar.SideBarData} />
                 <div className={"contain"}>
                     <Routes>
-                    <Route path='/profile' element={<Profile PostData={props.state.ProfilePage.PostData} addPost={props.addPost} />}/>
+                    <Route path='/profile' element={<Profile ProfilePage={props.state.ProfilePage} dispatch={props.dispatch} />}/>
                     <Route path='/dialogs*'   element={<Dialogs DialogData={props.state.DialogPage.DialogData} TextData={props.state.DialogPage.TextData} />} />
                     <Route path='/news' element={<News/>}/>
                     <Route path='/music' element={<Music/>}/>
