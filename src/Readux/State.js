@@ -1,5 +1,9 @@
 import React from 'react'
 
+const ADD_POST = 'ADD-POST'
+const UPDATE_NEW_TEXT_PROFILE = 'UPDATE-NEW-TEXT-PROFILE'
+const ADD_DIALOG = 'ADD-DIALOG'
+const UPDATE_NEW_TEXT_DIALOG = 'UPDATE-NEW-TEXT-DIALOG'
 let store = {
     _subscriber() {
         alert('adafafd')
@@ -18,7 +22,8 @@ let store = {
                 {id: 3, name: 'Mikee'},
                 {id: 4, name: 'Mikee'},
                 {id: 5, name: 'Ylia'}
-            ]
+            ],
+            newDialog: ''
         },
         ProfilePage: {
             PostData: [
@@ -71,13 +76,29 @@ let store = {
             this._state.ProfilePage.PostData.push(newtext)
             this._state.ProfilePage.newPostText = ''
             this._subscriber(this._state)
-        } else if (action.type === 'UPDATE-NEW-TEXT') {
+        } else if (action.type === 'UPDATE-NEW-TEXT-PROFILE') {
             this._state.ProfilePage.newPostText = action.newText
             this._subscriber(this._state)
+        } else if (action.type === 'ADD-DIALOG') {
+            let newnext = {
+                id: 5,
+                text: this._state.DialogPage.newDialog
+            }
+            this._state.DialogPage.TextData.push(newnext)
+            this._state.DialogPage.newDialog = ''
+            this._subscriber(this._state)
+        } else if (action.type === 'UPDATE-NEW-TEXT-DIALOG') {
+            this._state.DialogPage.newDialog = action.newText
+            this._subscriber(this._state)
+        } else {
+            alert('нет action!!!')
         }
     }
 
 }
 
-
+export const ActionCreatorAddPost = () => ({type: ADD_POST})
+export const ActionCreatorUpdatePostText = (text) => ({type: UPDATE_NEW_TEXT_PROFILE, newText: text})
+export const ActionCreatorAddDialog = () => ({type: ADD_DIALOG})
+export const ActionCreatorUpdateDialogText = (text) => ({type: UPDATE_NEW_TEXT_DIALOG, newText: text})
 export default store
