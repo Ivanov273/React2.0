@@ -2,17 +2,21 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
-import store from './Readux/State'
+import store from './Readux/redux-store'
 //import {subscribe} from "./Readux/State";
-let render = (state)=> {
+let renderState = (state)=> {
     ReactDOM.render(
-        <App state={state} dispatch={store.dispatch.bind(store)} />,
+        <App state={state} store={store} dispatch={store.dispatch.bind(store)} />,
         document.getElementById('root')
     )
 }
-render(store.getState())
+renderState(store.getState())
 
-store.setState(render)
+store.subscribe(()=>{
+
+   let state =  store.getState()
+    renderState(state)
+})
 //let state = store.getState()
 //store.setState(render)
 //store.setState(rerenderState)

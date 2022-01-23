@@ -9,8 +9,9 @@ import News from "./Component/News/News";
 import Music from "./Component/Music/Music";
 
 const App = (props) => {
-//console.log(props.addMessage)
+
   //  props.addMessage
+
     return (
         <BrowserRouter>
             <div className="wrapper">

@@ -5,7 +5,7 @@ const ProfileInfo = () =>{
     return (
         <div>
             <img className={s.main_img}
-                 src="https://ostrov-ok.by/assets/images/rekl-rassylka/egipet.jpg" alt=""/>
+                 src="https://bessarabiainform.com/wp-content/uploads/2019/02/continuous-integration-for-react-native.png" alt=""/>
         </div>
     );
 }

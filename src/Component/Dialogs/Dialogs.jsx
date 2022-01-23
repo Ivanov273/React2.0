@@ -2,12 +2,12 @@ import React from 'react'
 import s from './Dialogs.module.css'
 import DialogItem from './DialogItem/DialogItem'
 import MessageItem from './MessageItem/MessageItem'
-import {ActionCreatorAddDialog, ActionCreatorUpdateDialogText} from "../../Readux/State";
+import {ActionCreatorAddDialog, ActionCreatorUpdateDialogText} from "../../Readux/Reducer-Dialog";
 
 const Dialogs = (props) => {
-    let elementDialog = React.createRef()
-    let OnChandeDialog = () => {
-        let text = elementDialog.current.value
+
+    let OnChandeDialog = (e) => {
+        let text = e.target.value
         props.dispatch(ActionCreatorUpdateDialogText(text))
     }
     let AddDialog = () => {
@@ -27,7 +27,7 @@ const Dialogs = (props) => {
             <div className={s.messages}>
                 {MessagesElement}
                 <div>
-                    <textarea ref={elementDialog} value={props.DialogPage.newDialog} onChange={OnChandeDialog} cols="20"
+                    <textarea  value={props.DialogPage.newDialog} placeholder='Enter your message' onChange={OnChandeDialog} cols="20"
                               rows="1"></textarea>
                     <button onClick={AddDialog}>add</button>
                 </div>

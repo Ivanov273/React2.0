@@ -1,11 +1,12 @@
 import React from 'react'
-
-const ADD_POST = 'ADD-POST'
-const UPDATE_NEW_TEXT_PROFILE = 'UPDATE-NEW-TEXT-PROFILE'
+import reducerProfile from './Reducer-Profile'
+import reducerDialog from './Reducer-Dialog'
 const ADD_DIALOG = 'ADD-DIALOG'
 const UPDATE_NEW_TEXT_DIALOG = 'UPDATE-NEW-TEXT-DIALOG'
+const ADD_POST = 'ADD-POST'
+const UPDATE_NEW_TEXT_PROFILE = 'UPDATE-NEW-TEXT-PROFILE'
 let store = {
-    _subscriber() {
+    _callsubscribe() {
         alert('adafafd')
     },
     _state: {
@@ -62,37 +63,15 @@ let store = {
     getState() {
         return this._state
     },
-    setState(observer) {
+    subscribe(observer) {
 
-        this._subscriber = observer
+        this._callsubscribe = observer
     },
     dispatch(action) {
-        if (action.type === 'ADD-POST') {
-            let newtext = {
-                id: 9,
-                text: this._state.ProfilePage.newPostText,
-                like: 5555555555
-            }
-            this._state.ProfilePage.PostData.push(newtext)
-            this._state.ProfilePage.newPostText = ''
-            this._subscriber(this._state)
-        } else if (action.type === 'UPDATE-NEW-TEXT-PROFILE') {
-            this._state.ProfilePage.newPostText = action.newText
-            this._subscriber(this._state)
-        } else if (action.type === 'ADD-DIALOG') {
-            let newnext = {
-                id: 5,
-                text: this._state.DialogPage.newDialog
-            }
-            this._state.DialogPage.TextData.push(newnext)
-            this._state.DialogPage.newDialog = ''
-            this._subscriber(this._state)
-        } else if (action.type === 'UPDATE-NEW-TEXT-DIALOG') {
-            this._state.DialogPage.newDialog = action.newText
-            this._subscriber(this._state)
-        } else {
-            alert('нет action!!!')
-        }
+   this._state.ProfilePage = reducerProfile(this._state.ProfilePage,action)
+   this._state.DialogPage = reducerDialog(this._state.DialogPage,action)
+
+        this._callsubscribe(this._state)
     }
 
 }
