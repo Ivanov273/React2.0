@@ -3,10 +3,16 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import store from './Readux/redux-store'
+import {BrowserRouter} from "react-router-dom";
+import StoreContext from "./StoreContext";
 //import {subscribe} from "./Readux/State";
 let renderState = (state)=> {
     ReactDOM.render(
-        <App state={state} store={store} dispatch={store.dispatch.bind(store)} />,
+        <BrowserRouter>
+            <StoreContext.Provider value={store} >
+        <App    />
+            </StoreContext.Provider>
+        </BrowserRouter>,
         document.getElementById('root')
     )
 }
