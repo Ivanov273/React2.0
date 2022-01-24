@@ -4,6 +4,7 @@ import s from './Navbar.module.css'
 import SideBar from "../SideBar/SideBar";
 
 const Navbar = (props) => {
+    let state = props.store.getState()
     return (
         <div className={s.main}>
             <nav className={s.mainNav}>
@@ -23,7 +24,7 @@ const Navbar = (props) => {
                         <NavLink className={navData => navData.isActive ? s.active : s.item} to="/music">Music</NavLink>
                     </div>
                     <div>
-                        <SideBar SideBarData={props.SideBarData}/>
+                        <SideBar SideBarData={state.SideBar.SideBarData}/>
                     </div>
                 </div>
             </nav>

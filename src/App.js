@@ -7,20 +7,20 @@ import Profile from "./Component/Profile/Profile";
 import Dialogs from "./Component/Dialogs/Dialogs";
 import News from "./Component/News/News";
 import Music from "./Component/Music/Music";
+import DialogsContainer from "./Component/Dialogs/DialogsContainer";
 
 const App = (props) => {
 
-  //  props.addMessage
 
     return (
         <BrowserRouter>
             <div className="wrapper">
                 <Header/>
-                <Navbar SideBarData={props.state.SideBar.SideBarData} />
+                <Navbar store={props.store} />
                 <div className={"contain"}>
                     <Routes>
-                    <Route path='/profile' element={<Profile ProfilePage={props.state.ProfilePage} dispatch={props.dispatch} />}/>
-                    <Route path='/dialogs*'   element={<Dialogs DialogPage={props.state.DialogPage}  dispatch={props.dispatch} />} />
+                    <Route path='/profile' element={<Profile store={props.store}  />}/>
+                    <Route path='/dialogs*'   element={<DialogsContainer store={props.store}  />} />
                     <Route path='/news' element={<News/>}/>
                     <Route path='/music' element={<Music/>}/>
                     </Routes>
