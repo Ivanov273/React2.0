@@ -11,27 +11,28 @@ let initstate = {
         {id: 6, text: 'acascascascsac', like: 22},
         {id: 7, text: 'acascavdvdvdscascsac', like: 22}
     ],
-    newPostText: ''
+    newPostText: 'It kamasutra'
 }
 const reducerProfile = (state = initstate, action) => {
+
     switch (action.type) {
-        case ADD_POST : {
-            let newtext = {
+        case ADD_POST :
+            let newelement = {
                 id: 9,
                 text: state.newPostText,
                 like: 5555555555
             }
-            let copyState = {...state}
-            copyState.PostData = [...state.PostData]
-            copyState.PostData.push(newtext)
-            copyState.newPostText = ''
-            return copyState
-        }
-        case     UPDATE_NEW_TEXT_PROFILE: {
-            let copyState = {...state}
-            copyState.newPostText = action.newText
-            return copyState
-        }
+            return {
+                ...state,
+                PostData: [...state.PostData, newelement],
+                newPostText: ''
+            }
+        case     UPDATE_NEW_TEXT_PROFILE:
+            return {
+                ...state,
+                newPostText: action.newText
+            }
+
         default:
             return state
     }

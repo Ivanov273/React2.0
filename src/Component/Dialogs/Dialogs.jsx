@@ -11,8 +11,8 @@ const Dialogs = (props) => {
     let AddDialog = () => {
         props.onaddDialogs()
     }
-    let DialogMass = props.DialogData.map(dialog => <DialogItem name={dialog.name} id={dialog.id}/>)
-    let MessagesElement = props.TextData.map(text_mas => <MessageItem text={text_mas.text}/>)
+    let DialogMass = props.DialogData.map(d => <DialogItem name={d.name} key={d.id} id={d.id}/>)
+    let MessagesElement = props.TextData.map(t => <MessageItem key={t.id} text={t.text}/>)
     return (
         <div className={s.container}>
             <div className={s.dialogs}>

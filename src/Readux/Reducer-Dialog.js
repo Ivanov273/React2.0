@@ -16,31 +16,29 @@ let initstate = {
     ],
     newDialog: ''
 }
-const reducerDialog = (state = initstate,action)=> {
-
+const reducerDialog = (state = initstate, action) => {
+    let StateCopy = {...state}
     switch (action.type) {
-        case ADD_DIALOG: {
-
-            let newnext = {
+        case ADD_DIALOG:
+            let newelement = {
                 id: 5,
                 text: state.newDialog
             }
-            let copyState = {...state}
-             copyState.TextData = [...state.TextData]
-            copyState.TextData.push(newnext)
-            copyState.newDialog = ''
-            return copyState
-        }
-        case UPDATE_NEW_TEXT_DIALOG: {
-            let copyState = {...state}
-
-            copyState.newDialog = action.newText
-            return copyState
-        }
+            StateCopy={
+                ...state,
+                TextData: [...state.TextData,newelement],
+                newDialog: ''
+            }
+            return StateCopy
+        case UPDATE_NEW_TEXT_DIALOG:
+            StateCopy = {
+                ...state,
+                newDialog: action.newText
+            }
+            return StateCopy
         default:
             return state
     }
-
 }
 export const ActionCreatorAddDialog = () => ({type: ADD_DIALOG})
 export const ActionCreatorUpdateDialogText = (text) => ({type: UPDATE_NEW_TEXT_DIALOG, newText: text})

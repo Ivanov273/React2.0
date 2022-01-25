@@ -3,7 +3,7 @@ import Post from "./Post/Post";
 
 const MyPost = (props) => {
 
-    let PostMass = props.posts.map(p => <Post message={p.text} like={p.like}/>)
+    let PostMass = props.posts.map(p => <Post message={p.text} key={p.id} like={p.like}/>)
     let addPost = () => {
         props.onaddDialogs()
     }
