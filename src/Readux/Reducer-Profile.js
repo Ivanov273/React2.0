@@ -14,19 +14,27 @@ let initstate = {
     newPostText: ''
 }
 const reducerProfile = (state = initstate, action) => {
-
-    if (action.type === 'ADD-POST') {
-        let newtext = {
-            id: 9,
-            text: state.newPostText,
-            like: 5555555555
+    switch (action.type) {
+        case ADD_POST : {
+            let newtext = {
+                id: 9,
+                text: state.newPostText,
+                like: 5555555555
+            }
+            let copyState = {...state}
+            copyState.PostData = [...state.PostData]
+            copyState.PostData.push(newtext)
+            copyState.newPostText = ''
+            return copyState
         }
-        state.PostData.push(newtext)
-        state.newPostText = ''
-    } else if (action.type === 'UPDATE-NEW-TEXT-PROFILE') {
-        state.newPostText = action.newText
+        case     UPDATE_NEW_TEXT_PROFILE: {
+            let copyState = {...state}
+            copyState.newPostText = action.newText
+            return copyState
+        }
+        default:
+            return state
     }
-    return state
 }
 export const ActionCreatorAddPost = () => ({type: ADD_POST})
 export const ActionCreatorUpdatePostText = (text) => ({type: UPDATE_NEW_TEXT_PROFILE, newText: text})

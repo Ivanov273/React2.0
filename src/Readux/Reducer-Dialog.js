@@ -17,19 +17,30 @@ let initstate = {
     newDialog: ''
 }
 const reducerDialog = (state = initstate,action)=> {
-    if (action.type === 'ADD-DIALOG') {
-        let newnext = {
-            id: 5,
-            text: state.newDialog
+
+    switch (action.type) {
+        case ADD_DIALOG: {
+
+            let newnext = {
+                id: 5,
+                text: state.newDialog
+            }
+            let copyState = {...state}
+             copyState.TextData = [...state.TextData]
+            copyState.TextData.push(newnext)
+            copyState.newDialog = ''
+            return copyState
         }
-        state.TextData.push(newnext)
-        state.newDialog = ''
+        case UPDATE_NEW_TEXT_DIALOG: {
+            let copyState = {...state}
 
-    } else if (action.type === 'UPDATE-NEW-TEXT-DIALOG') {
-        state.newDialog = action.newText
-
+            copyState.newDialog = action.newText
+            return copyState
+        }
+        default:
+            return state
     }
-    return state
+
 }
 export const ActionCreatorAddDialog = () => ({type: ADD_DIALOG})
 export const ActionCreatorUpdateDialogText = (text) => ({type: UPDATE_NEW_TEXT_DIALOG, newText: text})

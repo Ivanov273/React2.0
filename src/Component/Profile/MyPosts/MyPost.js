@@ -9,6 +9,7 @@ const MyPost = (props) => {
     }
     let OnPostChange = (e) => {
         let text = e.target.value
+
         props.onPostChange(text)
     }
     return (
