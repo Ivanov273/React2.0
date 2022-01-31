@@ -1,3 +1,5 @@
+
+
 const FOLLOW = 'FOLLOW'
 const UNFOLLOW = 'UNFOLLOW'
 const SETUSERS = 'SETUSERS'
@@ -7,6 +9,7 @@ let initstate = {
 
     ]
 }
+
 const reducerUsers = (state = initstate, action) => {
 
     switch (action.type) {
@@ -21,7 +24,6 @@ const reducerUsers = (state = initstate, action) => {
        })
             }
         case UNFOLLOW :
-           console.log(state)
             return {
                 ...state,
                 users: state.users.map(u=>{

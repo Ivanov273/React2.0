@@ -1,53 +1,24 @@
 import React from 'react'
 import s from "./UsersItem/UsersItem.module.css";
-import {UnFollowUserAC} from "../../Readux/Reducer-Users";
+import axios from "axios";
+import userPhoto from "./../../img/rik.jpg"
+
 
 const Users = (props) => {
-
-    if (props.Users.length === 0) {
-        props.SetUsers([{
-            id: 0,
-            followed: true,
-            name: 'Dmitry',
-            location: {country: 'China', city: 'Saratov'},
-            message: 'it kamasutra',
-            photo: 'http://www.graycell.ru/picture/big/rik.jpg'
-        },
-            {
-                id: 1,
-                followed: false,
-                name: 'Dmitryw',
-                location: {country: 'China', city: 'Saratov'},
-                message: 'it kamasutra',
-                photo: 'http://www.graycell.ru/picture/big/rik.jpg'
-            },
-            {
-                id: 2,
-                followed: false,
-                name: 'Dmitrye',
-                location: {country: 'China', city: 'Saratov'},
-                message: 'it kamasutra',
-                photo: 'http://www.graycell.ru/picture/big/rik.jpg'
-            },
-            {
-                id: 3,
-                followed: true,
-                name: 'Dmitry',
-                location: {country: 'China', city: 'Saratov'},
-                message: 'it kamasutra',
-                photo: 'http://www.graycell.ru/picture/big/rik.jpg'
-            }
-
-        ])
+    let GetUsers = ()=> {
+        if (props.Users.length === 0) {
+            axios.get('https://social-network.samuraijs.com/api/1.0/users').then(response => {
+                props.SetUsers(response.data.items)
+            })
+        }
     }
-    //debugger
     return <div>
-
+        <button onClick={GetUsers}>GetUsers</button>
         {
             props.Users.map(u => <div key={u.id}>
                 <div className={s.main}>
                     <div className={s.users}>
-                        <img className={s.usersPhoto} src={u.photo}/>
+                        <img className={s.usersPhoto} src={u.photos.small != null ? u.photos.small : userPhoto}/>
                         <div className={s.button}>
                             {u.followed ? <button onClick={() => {
                                 props.UnFollow(u.id)
@@ -58,9 +29,9 @@ const Users = (props) => {
                     </div>
                     <div className={s.item}>
                         <div className={s.one}>{u.name}</div>
-                        <div className={s.two}>{u.location.country}</div>
-                        <div className={s.three}>{u.message}</div>
-                        <div className={s.foor}> {u.location.city}</div>
+                        <div className={s.two}>}</div>
+                        <div className={s.three}></div>
+                        <div className={s.foor}></div>
                     </div>
                 </div>
             </div>)

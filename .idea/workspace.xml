@@ -5,16 +5,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e072e335-44cb-4f57-9b84-c517c01cce45" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/Component/Users/Users-Container.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Component/Users/Users.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Component/Users/Users.module.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Component/Users/UsersItem/UsersItem.module.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/Readux/Reducer-Users.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Component/Users/UsersC.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Component/Navbar/Navbar.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Component/Navbar/Navbar.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Component/Profile/MyPosts/MyPostContainer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Component/Profile/MyPosts/MyPostContainer.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Readux/redux-store.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Readux/redux-store.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Component/Users/Users-Container.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Component/Users/Users-Container.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Component/Users/Users.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Component/Users/Users.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Readux/Reducer-Users.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Readux/Reducer-Users.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -193,7 +191,7 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="js.last.introduce.type" value="CONST" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/Component/Users" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -208,8 +206,8 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\React\Project\react2.0\src\Component\Users\UsersItem" />
       <recent name="C:\React\Project\react2.0\src\Component\Users" />
+      <recent name="C:\React\Project\react2.0\src\Component\Users\UsersItem" />
       <recent name="C:\React\Project\react2.0\src\Readux" />
       <recent name="C:\React\Project\react2.0\src\Component\Dialogs" />
       <recent name="C:\React\Project\react2.0\src\Component\Profile\MyPosts" />
@@ -266,7 +264,7 @@
       <workItem from="1643254124127" duration="45000" />
       <workItem from="1643256102248" duration="409000" />
       <workItem from="1643256528447" duration="1191000" />
-      <workItem from="1643613449923" duration="3816000" />
+      <workItem from="1643613449923" duration="10773000" />
     </task>
     <servers />
   </component>
@@ -308,6 +306,17 @@
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

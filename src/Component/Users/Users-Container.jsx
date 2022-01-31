@@ -10,20 +10,20 @@ let mapStateToUsers = (state) => {
     }
 }
 
-let initMapDispatchToProps = (dispatch) =>{
+let initMapDispatchToProps = (dispatch) => {
     return {
-        OnFollow : (userid)=>{
+        OnFollow: (userid) => {
             dispatch(FollowUserAC(userid))
         },
-        UnFollow : (userid)=>{
+        UnFollow: (userid) => {
             dispatch(UnFollowUserAC(userid))
         },
-        SetUsers : (users)=>{
+        SetUsers: (users) => {
             dispatch(SetUsersAC(users))
         }
     }
 }
-const MyUsersContainer = connect(mapStateToUsers,initMapDispatchToProps)(Users)
+const MyUsersContainer = connect(mapStateToUsers, initMapDispatchToProps)(Users)
 
 
 export default MyUsersContainer;
