@@ -1,5 +1,4 @@
 import React from 'react';
-
 import {ActionCreatorAddPost, ActionCreatorUpdatePostText} from "../../../Readux/Reducer-Profile";
 import MyPost from "./MyPost";
 import {connect} from "react-redux";
