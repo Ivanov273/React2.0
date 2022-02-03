@@ -7,7 +7,6 @@
     <list default="true" id="e072e335-44cb-4f57-9b84-c517c01cce45" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Component/Users/Users.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Component/Users/Users.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Component/Users/UsersC.jsx" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
