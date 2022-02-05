@@ -6,7 +6,10 @@
   <component name="ChangeListManager">
     <list default="true" id="e072e335-44cb-4f57-9b84-c517c01cce45" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Component/Users/Users-Container.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Component/Users/Users-Container.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Component/Users/Users.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Component/Users/Users.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Component/Users/UsersItem/UsersItem.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/Component/Users/UsersItem/UsersItem.module.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Readux/Reducer-Users.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Readux/Reducer-Users.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -214,12 +217,23 @@
       <recent name="C:\React\Project\react2.0\src\Component\Header" />
     </key>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Node.js.News.jsx">
     <configuration name="News.jsx" type="NodeJSConfigurationType" temporary="true" nameIsGenerated="true" path-to-js-file="News.jsx" working-dir="$PROJECT_DIR$/src/Component/News">
+      <method v="2" />
+    </configuration>
+    <configuration name="start" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="start" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
       <method v="2" />
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="npm.start" />
         <item itemvalue="Node.js.News.jsx" />
       </list>
     </recent_temporary>
@@ -259,6 +273,7 @@
       <workItem from="1643256102248" duration="409000" />
       <workItem from="1643256528447" duration="1191000" />
       <workItem from="1643613449923" duration="10773000" />
+      <workItem from="1644049136785" duration="7186000" />
     </task>
     <servers />
   </component>

@@ -4,16 +4,40 @@ import axios from "axios";
 import userPhoto from "./../../img/rik.jpg"
 
 class Users extends React.Component {
-  
 
-componentDidMount() {
-    axios.get('https://social-network.samuraijs.com/api/1.0/users').then(response => {
-        this.props.SetUsers(response.data.items)
-    })
+
+    componentDidMount() {
+        axios.get(`https://social-network.samuraijs.com/api/1.0/users?page=${this.props.currentPage}&count=${this.props.pagesize}`).then(response => {
+            this.props.SetUsers(response.data.items)
+            console.log(response.data.items)
+
+        })
+    }
+    SetUserPage=(p)=>{
+        this.props.SetPage(p)
+        axios.get(`https://social-network.samuraijs.com/api/1.0/users?page=${p}&count=10`).then(response => {
+            this.props.SetUsers(response.data.items)
+
+
+
+
+        })
 }
+    render() {
+        let page = []
+        let colPages = Math.ceil(this.props.TotalCount / this.props.pagesize)
+        for (let i = 1; i <= 20; i++) {
+            page.push(i)
+        }
 
-    render(){
         return <div>
+            <div>
+                {page.map(p => {
+                    return <span onClick={()=>this.SetUserPage(p)} className={this.props.currentPage==p && s.active }>{p}</span>
+
+                })}
+
+            </div>
             {
                 this.props.Users.map(u => <div key={u.id}>
                     <div className={s.main}>
@@ -39,7 +63,7 @@ componentDidMount() {
         </div>
 
 
-}
+    }
 }
 
 export default Users
