@@ -49,7 +49,7 @@ const reducerUsers = (state = initstate, action) => {
                 ...state,
                 currentPage: action.page
             }
-            case TOGLE:
+        case TOGLE:
             return {
                 ...state,
                 isfetching: action.fetching
@@ -60,9 +60,10 @@ const reducerUsers = (state = initstate, action) => {
     }
 
 }
-export const FollowUserAC = (userid) => ({type: FOLLOW, userid})
-export const UnFollowUserAC = (userid) => ({type: UNFOLLOW, userid})
-export const SetUsersAC = (users) => ({type: SETUSERS, users})
-export const SetPagesAC = (page) => ({type: SETPAGE, page})
-export const TogleAC = (fetching) => ({type: TOGLE, fetching})
+
+export const OnFollow = (userid) => ({type: FOLLOW, userid})
+export const UnFollow = (userid) => ({type: UNFOLLOW, userid})
+export const SetUsers = (users) => ({type: SETUSERS, users})
+export const SetPage = (page) => ({type: SETPAGE, page})
+export const Togle = (fetching) => ({type: TOGLE, fetching})
 export default reducerUsers
