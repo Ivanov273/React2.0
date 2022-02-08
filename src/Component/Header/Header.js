@@ -1,17 +1,17 @@
 import React from 'react';
 import s from './Header.module.css'
-const Header = ()=>{
+import {NavLink} from "react-router-dom";
+const Header = (props)=>{
     return (
-        <header className={s.main}>
+        <header className={s.main} >
             <div><img className={s.logo}
                       src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/React-icon.svg/1280px-React-icon.svg.png"/>
             </div>
-            <div className={s.Header_menu}>
+         <div className={s.wrapper_login}>
+             { props.isAuth ? props.login : <NavLink className={s.login}  to="/login" >login</NavLink>}
 
-            </div>
-            <div className={s.Phone}>
+         </div>
 
-            </div>
         </header>
     );
 }
