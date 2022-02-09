@@ -10,7 +10,9 @@ class UserContainer extends React.Component {
 
     componentDidMount() {
         this.props.Togle(true)
-        axios.get(`https://social-network.samuraijs.com/api/1.0/users?page=${this.props.currentPage}&count=${this.props.pagesize}`).then(response => {
+        axios.get(`https://social-network.samuraijs.com/api/1.0/users?page=${this.props.currentPage}&count=${this.props.pagesize}`,{
+            withCredentials: true
+        }).then(response => {
             this.props.SetUsers(response.data.items)
             this.props.Togle(false)
         })
@@ -19,7 +21,9 @@ class UserContainer extends React.Component {
     SetUserPage = (p) => {
         this.props.Togle(true)
         this.props.SetPage(p)
-        axios.get(`https://social-network.samuraijs.com/api/1.0/users?page=${p}&count=10`).then(response => {
+        axios.get(`https://social-network.samuraijs.com/api/1.0/users?page=${p}&count=10`,{
+            withCredentials: true
+        }).then(response => {
             this.props.SetUsers(response.data.items)
             this.props.Togle(false)
 
