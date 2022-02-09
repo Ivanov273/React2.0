@@ -1,6 +1,6 @@
 import React from 'react';
 import {connect} from 'react-redux';
-import {OnFollow, UnFollow, SetUsers, SetPage, Togle} from '../../Readux/Reducer-Users';
+import {OnFollow, UnFollow, SetUsers, SetPage, Togle, TogleProgressFetching} from '../../Readux/Reducer-Users';
 import Users from './Users';
 import Preloader from "../Common/Preloader";
 import {usersAPI} from "../../api/getUsersApi";
@@ -40,7 +40,11 @@ class UserContainer extends React.Component {
                    pagesize={this.props.pagesize}
                    UnFollow={this.props.UnFollow}
                    OnFollow={this.props.OnFollow}
-                   currentPage={this.props.currentPage}/>
+                   isfetching={this.props.isfetching}
+                   currentPage={this.props.currentPage}
+                   TogleProgressFetching={this.props.TogleProgressFetching}
+                   isfetchingprogress={this.props.isfetchingprogress}
+            />
         </>
     }
 }
@@ -51,11 +55,12 @@ let mapStateToUsers = (state) => {
         TotalCount: state.usersPage.TotalCount,
         pagesize: state.usersPage.PageSize,
         currentPage: state.usersPage.currentPage,
-        isfetching: state.usersPage.isfetching
+        isfetching: state.usersPage.isfetching,
+        isfetchingprogress: state.usersPage.isfetchingprogress
     }
 }
 
 
-export default connect(mapStateToUsers, {OnFollow, UnFollow, SetUsers, SetPage, Togle})(UserContainer)
+export default connect(mapStateToUsers, {OnFollow, UnFollow, SetUsers, SetPage, Togle,TogleProgressFetching})(UserContainer)
 
 

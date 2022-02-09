@@ -13,5 +13,15 @@ const instance = axios.create({
              return response.data
          })
 
+     } ,
+     getunFollowUsersApi (id= 1)  {
+
+         return     instance.delete(`follow/${id}`)
+
+     },
+     getFollowUsersApi (id= 1)  {
+
+         return     instance.post(`follow/${id}`)
+
      }
  }
