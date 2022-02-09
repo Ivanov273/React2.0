@@ -1,19 +1,19 @@
 import React from 'react';
 import {connect} from 'react-redux';
 import {OnFollow, UnFollow, SetUsers, SetPage, Togle} from '../../Readux/Reducer-Users';
-import axios from 'axios';
 import Users from './Users';
 import Preloader from "../Common/Preloader";
+import {usersAPI} from "../../api/getUsersApi";
 
 class UserContainer extends React.Component {
 
 
     componentDidMount() {
+
         this.props.Togle(true)
-        axios.get(`https://social-network.samuraijs.com/api/1.0/users?page=${this.props.currentPage}&count=${this.props.pagesize}`,{
-            withCredentials: true
-        }).then(response => {
-            this.props.SetUsers(response.data.items)
+        usersAPI.getUsersApi(this.props.currentPage,this.props.pagesize).then(data => {
+
+            this.props.SetUsers(data.items)
             this.props.Togle(false)
         })
     }
@@ -21,10 +21,8 @@ class UserContainer extends React.Component {
     SetUserPage = (p) => {
         this.props.Togle(true)
         this.props.SetPage(p)
-        axios.get(`https://social-network.samuraijs.com/api/1.0/users?page=${p}&count=10`,{
-            withCredentials: true
-        }).then(response => {
-            this.props.SetUsers(response.data.items)
+        usersAPI.getUsersApi(p).then(data => {
+            this.props.SetUsers(data.items)
             this.props.Togle(false)
 
         })
