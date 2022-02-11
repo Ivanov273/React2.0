@@ -25,3 +25,6 @@ const instance = axios.create({
 
      }
  }
+/*axios.get(`https://social-network.samuraijs.com/api/1.0/auth/me`,{
+            withCredentials: true
+        })*/

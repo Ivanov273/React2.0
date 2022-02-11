@@ -1,31 +1,29 @@
 import React from 'react';
 import {connect} from 'react-redux';
-import {OnFollow, UnFollow, SetUsers, SetPage, Togle, TogleProgressFetching} from '../../Readux/Reducer-Users';
+import {getUsersThunkCreator, followUsersThunkCreator, unfollowUsersThunkCreator
+} from '../../Readux/Reducer-Users';
 import Users from './Users';
 import Preloader from "../Common/Preloader";
-import {usersAPI} from "../../api/getUsersApi";
+
 
 class UserContainer extends React.Component {
 
 
     componentDidMount() {
 
-        this.props.Togle(true)
-        usersAPI.getUsersApi(this.props.currentPage,this.props.pagesize).then(data => {
+        this.props.getUsersThunkCreator(this.props.currentPage, this.props.pagesize)
+        /*
+                this.props.Togle(true)
+                usersAPI.getUsersApi(this.props.currentPage,this.props.pagesize).then(data => {
 
-            this.props.SetUsers(data.items)
-            this.props.Togle(false)
-        })
+                    this.props.SetUsers(data.items)
+                    this.props.Togle(false)
+                })
+        */
     }
 
     SetUserPage = (p) => {
-        this.props.Togle(true)
-        this.props.SetPage(p)
-        usersAPI.getUsersApi(p).then(data => {
-            this.props.SetUsers(data.items)
-            this.props.Togle(false)
-
-        })
+        this.props.getUsersThunkCreator(p, this.props.pagesize)
     }
 
     render() {
@@ -37,13 +35,9 @@ class UserContainer extends React.Component {
             <Users SetUserPage={this.SetUserPage}
                    Users={this.props.Users}
                    TotalCount={this.props.TotalCount}
-                   pagesize={this.props.pagesize}
-                   UnFollow={this.props.UnFollow}
-                   OnFollow={this.props.OnFollow}
-                   isfetching={this.props.isfetching}
-                   currentPage={this.props.currentPage}
-                   TogleProgressFetching={this.props.TogleProgressFetching}
                    isfetchingprogress={this.props.isfetchingprogress}
+                   followUsersThunkCreator={this.props.followUsersThunkCreator}
+                   unfollowUsersThunkCreator={this.props.unfollowUsersThunkCreator}
             />
         </>
     }
@@ -61,6 +55,10 @@ let mapStateToUsers = (state) => {
 }
 
 
-export default connect(mapStateToUsers, {OnFollow, UnFollow, SetUsers, SetPage, Togle,TogleProgressFetching})(UserContainer)
+export default connect(mapStateToUsers, {
+    getUsersThunkCreator,
+    followUsersThunkCreator,
+    unfollowUsersThunkCreator
+})(UserContainer)
 
 

@@ -1,3 +1,5 @@
+import {usersAPI} from "../api/getUsersApi";
+
 const FOLLOW = 'FOLLOW'
 const UNFOLLOW = 'UNFOLLOW'
 const SETUSERS = 'SETUSERS'
@@ -56,12 +58,12 @@ const reducerUsers = (state = initstate, action) => {
                 ...state,
                 isfetching: action.fetching
             }
-            case TOGLE_PROGRESS:
+        case TOGLE_PROGRESS:
             return {
                 ...state,
                 isfetchingprogress: action.isfetching ?
-                    [...state.isfetchingprogress,action.id]
-                    : state.isfetchingprogress.filter(id => id!=action.id)
+                    [...state.isfetchingprogress, action.id]
+                    : state.isfetchingprogress.filter(id => id != action.id)
             }
         default:
             return state
@@ -75,5 +77,37 @@ export const UnFollow = (userid) => ({type: UNFOLLOW, userid})
 export const SetUsers = (users) => ({type: SETUSERS, users})
 export const SetPage = (page) => ({type: SETPAGE, page})
 export const Togle = (fetching) => ({type: TOGLE, fetching})
-export const TogleProgressFetching = (isfetching,id) => ({type: TOGLE_PROGRESS, isfetching,id})
+export const TogleProgressFetching = (isfetching, id) => ({type: TOGLE_PROGRESS, isfetching, id})
+
+export const getUsersThunkCreator = (currentPage, pagesize) => {
+    return (dispatch) => {
+        dispatch(Togle(true))
+        usersAPI.getUsersApi(currentPage, pagesize).then(data => {
+            dispatch(SetUsers(data.items))
+            dispatch(Togle(false))
+        })
+    }
+}
+export const followUsersThunkCreator = (id) => {
+    return (dispatch) => {
+        dispatch(TogleProgressFetching(true, id))
+        usersAPI.getunFollowUsersApi(id).then(response => {
+            if (response.data.resultCode == 0) {
+                dispatch(UnFollow(id))
+            }
+            dispatch(TogleProgressFetching(false, id))
+        })
+    }
+}
+export const unfollowUsersThunkCreator = (id) => {
+    return (dispatch) => {
+        dispatch(TogleProgressFetching(true, id))
+        usersAPI.getFollowUsersApi(id).then(response => {
+            if (response.data.resultCode == 0) {
+                dispatch(OnFollow(id))
+            }
+            dispatch(TogleProgressFetching(false, id))
+        })
+    }
+}
 export default reducerUsers

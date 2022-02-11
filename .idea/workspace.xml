@@ -5,10 +5,18 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e072e335-44cb-4f57-9b84-c517c01cce45" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/api/HeaderApi.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/api/ProfileApi.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Component/Header/HeaderContainer.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Component/Header/HeaderContainer.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Component/Profile/ProfileContainer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Component/Profile/ProfileContainer.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Component/Users/Users-Container.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Component/Users/Users-Container.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Component/Users/Users.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Component/Users/Users.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Readux/Reducer-Profile.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Readux/Reducer-Profile.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Readux/Reducer-Users.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Readux/Reducer-Users.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Readux/redux-store.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Readux/redux-store.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/api/getUsersApi.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/api/getUsersApi.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -188,7 +196,7 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="js.last.introduce.type" value="CONST" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/Component/Header" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/api" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -203,11 +211,11 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\React\Project\react2.0\src\api" />
       <recent name="C:\React\Project\react2.0\src\Component\Header" />
       <recent name="C:\React\Project\react2.0\src\Readux" />
       <recent name="C:\React\Project\react2.0\src\Component\Profile" />
       <recent name="C:\React\Project\react2.0\src\Component\Users" />
-      <recent name="C:\React\Project\react2.0\src\Component\Users\UsersItem" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\React\Project\react2.0\src\Component" />
@@ -277,7 +285,8 @@
       <workItem from="1644142891970" duration="5388000" />
       <workItem from="1644237814550" duration="10672000" />
       <workItem from="1644336276595" duration="6444000" />
-      <workItem from="1644394023148" duration="12342000" />
+      <workItem from="1644394023148" duration="13019000" />
+      <workItem from="1644496848777" duration="8044000" />
     </task>
     <servers />
   </component>
