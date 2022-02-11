@@ -2,14 +2,6 @@ import React from 'react'
 import s from "./Users.module.css";
 import userPhoto from "../../img/rik.jpg";
 import {NavLink} from "react-router-dom";
-import axios from "axios";
-import {
-    followUsersThunkCreator,
-    OnFollow,
-    TogleProgressFetching,
-    unfollowUsersThunkCreator
-} from "../../Readux/Reducer-Users";
-import {usersAPI} from "../../api/getUsersApi";
 
 let Users = (props) => {
     let page = []
@@ -21,7 +13,7 @@ let Users = (props) => {
         <div>
             {page.map(p =>
                <span onClick={() => props.SetUserPage(p)}
-                             className={props.currentPage == p && s.active}>{p}</span>
+                             className={props.currentPage === p && s.active}>{p}</span>
 
             )}
 

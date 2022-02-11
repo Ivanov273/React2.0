@@ -3,6 +3,7 @@ import {BrowserRouter, Routes, Route} from "react-router-dom";
 import './App.css';
 import Navbar from "./Component/Navbar/Navbar";
 import News from "./Component/News/News";
+import Loginpage from "./Component/Login/Login";
 import Music from "./Component/Music/Music";
 import DialogsContainer from "./Component/Dialogs/DialogsContainer";
 import MyUsersContainer from "./Component/Users/Users-Container";
@@ -26,6 +27,7 @@ const App = () => {
                     <Route path='/users' element={<MyUsersContainer/>}/>
                     <Route path='/news' element={<News/>}/>
                     <Route path='/music' element={<Music/>}/>
+                    <Route path='/login' element={<Loginpage/>}/>
                 </Routes>
             </div>
         </div>

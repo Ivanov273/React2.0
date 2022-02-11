@@ -1,4 +1,4 @@
-import {usersAPI} from "../api/getUsersApi";
+import {usersAPI} from "../api/api";
 
 const FOLLOW = 'FOLLOW'
 const UNFOLLOW = 'UNFOLLOW'
@@ -84,6 +84,7 @@ export const getUsersThunkCreator = (currentPage, pagesize) => {
         dispatch(Togle(true))
         usersAPI.getUsersApi(currentPage, pagesize).then(data => {
             dispatch(SetUsers(data.items))
+            dispatch(SetPage(currentPage))
             dispatch(Togle(false))
         })
     }

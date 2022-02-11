@@ -1,5 +1,4 @@
-import {profileAPI} from "../api/ProfileApi";
-
+import {usersAPI} from "../api/api";
 const ADD_POST = 'ADD-POST'
 const UPDATE_NEW_TEXT_PROFILE = 'UPDATE-NEW-TEXT-PROFILE'
 const SET_USERS_PROFILE = 'SET_USERS_PROFILE'
@@ -51,7 +50,7 @@ export const ActionCreatorUpdatePostText = (text) => ({type: UPDATE_NEW_TEXT_PRO
 export const SetUsersProfile = (usersprofile) => ({type: SET_USERS_PROFILE, usersprofile})
 export const ProfileThunk = (userid) =>{
     return (dispatch)=>{
-        profileAPI.getProfile(userid).then(response => {
+        usersAPI.getProfile(userid).then(response => {
 
             dispatch(SetUsersProfile(response.data))
         })

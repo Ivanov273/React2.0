@@ -3,8 +3,7 @@ import Profile from "./Profile";
 import axios from "axios";
 import {connect} from "react-redux";
 import {ProfileThunk, SetUsersProfile} from "../../Readux/Reducer-Profile";
-import {useParams} from "react-router-dom";
-import {profileAPI} from "../../api/ProfileApi";
+import {Navigate, useParams} from "react-router-dom";
 
 
 const withRouter = WrappedComponent => props => {
@@ -28,6 +27,7 @@ class ProfileContainer extends React.Component {
     }
 
     render() {
+        if(!this.props.Auth) return <Navigate to={"/login"} />
         return <div>
             <Profile {...this.props} profile={this.props.profile}/>
         </div>
@@ -35,7 +35,8 @@ class ProfileContainer extends React.Component {
 }
 
 let mapStateToProps = (state) => ({
-    profile: state.ProfilePage.profile
+    profile: state.ProfilePage.profile,
+    Auth: state.Auth.isAuth
 })
 
 

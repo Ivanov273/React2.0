@@ -23,6 +23,14 @@ const instance = axios.create({
 
          return     instance.post(`follow/${id}`)
 
+     },
+     getProfile (userid=5)  {
+         return     instance.get(`profile/${userid}`)
+
+     },
+     apiAuth ()  {
+         return     instance.get(`auth/me`)
+
      }
  }
 /*axios.get(`https://social-network.samuraijs.com/api/1.0/auth/me`,{

@@ -10,7 +10,8 @@ let mapStateToProps = (state)=>{
         newDialog : state.DialogPage.newDialog,
         DialogData : state.DialogPage.DialogData,
         newText : state.DialogPage.newDialog,
-        TextData : state.DialogPage.TextData
+        TextData : state.DialogPage.TextData,
+        Auth: state.Auth.isAuth
     }
 }
 let mapDispatchToProps = (dispatch)=>{
