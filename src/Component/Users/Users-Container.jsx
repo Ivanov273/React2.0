@@ -4,6 +4,7 @@ import {followUsersThunkCreator, getUsersThunkCreator, unfollowUsersThunkCreator
 import Users from './Users';
 import Preloader from "../Common/Preloader";
 import {Navigate} from "react-router-dom";
+import {WithAuthContainer} from "../../HOC/AuthHOC";
 
 
 class UserContainer extends React.Component {
@@ -45,7 +46,12 @@ class UserContainer extends React.Component {
         </>
     }
 }
+let RedirectComponent = WithAuthContainer(UserContainer)
 
+let mapStateToProps = (state) => ({
+    profile: state.ProfilePage.profile,
+
+})
 let mapStateToUsers = (state) => {
     return {
         Users: state.usersPage.users,
@@ -63,6 +69,6 @@ export default connect(mapStateToUsers, {
     getUsersThunkCreator,
     followUsersThunkCreator,
     unfollowUsersThunkCreator
-})(UserContainer)
+})(RedirectComponent)
 
 

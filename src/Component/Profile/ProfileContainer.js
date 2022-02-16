@@ -4,6 +4,7 @@ import axios from "axios";
 import {connect} from "react-redux";
 import {ProfileThunk, SetUsersProfile} from "../../Readux/Reducer-Profile";
 import {Navigate, useParams} from "react-router-dom";
+import {WithAuthContainer} from "../../HOC/AuthHOC";
 
 
 const withRouter = WrappedComponent => props => {
@@ -26,21 +27,23 @@ class ProfileContainer extends React.Component {
         this.props.ProfileThunk(userid)
     }
 
+
     render() {
-        if(!this.props.Auth) return <Navigate to={"/login"} />
         return <div>
             <Profile {...this.props} profile={this.props.profile}/>
         </div>
     }
 }
 
+let RedirectComponent = WithAuthContainer(ProfileContainer)
+
 let mapStateToProps = (state) => ({
     profile: state.ProfilePage.profile,
-    Auth: state.Auth.isAuth
+
 })
 
 
 
-const ProfileContainer2 = withRouter(ProfileContainer)
+const ProfileContainerwithRouter = withRouter(RedirectComponent)
 
-export default connect(mapStateToProps, {ProfileThunk})(ProfileContainer2)
+export default connect(mapStateToProps, {ProfileThunk})(ProfileContainerwithRouter)
