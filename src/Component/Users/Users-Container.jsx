@@ -5,6 +5,7 @@ import Users from './Users';
 import Preloader from "../Common/Preloader";
 import {Navigate} from "react-router-dom";
 import {WithAuthContainer} from "../../HOC/AuthHOC";
+import {compose} from "redux";
 
 
 class UserContainer extends React.Component {
@@ -64,11 +65,13 @@ let mapStateToUsers = (state) => {
     }
 }
 
-
-export default connect(mapStateToUsers, {
+export default compose(connect(mapStateToUsers, {
     getUsersThunkCreator,
     followUsersThunkCreator,
     unfollowUsersThunkCreator
-})(RedirectComponent)
+}),
+    WithAuthContainer
+)(RedirectComponent)
+
 
 

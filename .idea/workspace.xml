@@ -5,7 +5,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e072e335-44cb-4f57-9b84-c517c01cce45" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/HOC/AuthHOC.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Component/Dialogs/DialogsContainer.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Component/Dialogs/DialogsContainer.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Component/Profile/ProfileContainer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Component/Profile/ProfileContainer.js" afterDir="false" />
@@ -280,7 +279,8 @@
       <workItem from="1644394023148" duration="13019000" />
       <workItem from="1644496848777" duration="8044000" />
       <workItem from="1644578870498" duration="9573000" />
-      <workItem from="1645021373352" duration="2577000" />
+      <workItem from="1645021373352" duration="3495000" />
+      <workItem from="1645105908977" duration="888000" />
     </task>
     <servers />
   </component>
