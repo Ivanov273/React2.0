@@ -25,7 +25,7 @@ const instance = axios.create({
 
      },
      getProfile (userid=5)  {
-         return     instance.get(`profile/${userid}`)
+         return     ProfileAPI.getProfile(userid)
 
      },
      apiAuth ()  {
@@ -33,6 +33,18 @@ const instance = axios.create({
 
      }
  }
+export const ProfileAPI = {
+     getProfile (userid=5)  {
+        return     instance.get(`profile/${userid}`)
+
+    },
+    getStatus(userid){
+         return instance.get(`profile/status/`+userid)
+    },
+    updateStatus(status){
+         return instance.put(`profile/status/`,{status: status})
+    }
+}
 /*axios.get(`https://social-network.samuraijs.com/api/1.0/auth/me`,{
             withCredentials: true
         })*/

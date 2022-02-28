@@ -2,7 +2,7 @@ import React from 'react';
 import Profile from "./Profile";
 import axios from "axios";
 import {connect} from "react-redux";
-import {ProfileThunk, SetUsersProfile} from "../../Readux/Reducer-Profile";
+import {ProfileStatusThunk, ProfileThunk, UpdateProfileStatusThunk} from "../../Readux/Reducer-Profile";
 import {Navigate, useParams} from "react-router-dom";
 import {WithAuthContainer} from "../../HOC/AuthHOC";
 import {compose} from "redux";
@@ -23,15 +23,16 @@ class ProfileContainer extends React.Component {
 
         let userid = this.props.params.userId
         if(!userid){
-            userid = 2
+            userid = 22189
         }
         this.props.ProfileThunk(userid)
+        this.props.ProfileStatusThunk(userid)
     }
 
 
     render() {
         return <div>
-            <Profile {...this.props} profile={this.props.profile}/>
+            <Profile {...this.props} profile={this.props.profile} updateStatus={this.props.UpdateProfileStatusThunk} />
         </div>
     }
 }
@@ -39,12 +40,13 @@ class ProfileContainer extends React.Component {
 let RedirectComponent = WithAuthContainer(ProfileContainer)
 
 let mapStateToProps = (state) => ({
-    profile: state.ProfilePage.profile,
+    profilestatus: state.ProfilePage.profilestatus,
+    profile: state.ProfilePage.profile
 
 })
 
 const ProfileContainerwithRouter = withRouter(RedirectComponent)
-export default compose(connect(mapStateToProps, {ProfileThunk}),
+export default compose(connect(mapStateToProps, {ProfileThunk,ProfileStatusThunk,UpdateProfileStatusThunk}),
     withRouter,
     WithAuthContainer
 )(ProfileContainerwithRouter)
