@@ -1,14 +1,13 @@
 import React from 'react';
 import s from './ProfileInfo.module.css'
 import userPhoto from "../../../img/rik.jpg";
-import Preloader from "../../Common/Preloader";
 import ProfileStatus from "./ProfileStatus";
+import Preloader from "../../Common/Preloader";
 
 const ProfileInfo = (props) => {
     if (!props.profile) {
-        return <Preloader/>
-    }
-
+       return <Preloader/>
+   }
     return <div className={s.main}>
 <div>
         <div>

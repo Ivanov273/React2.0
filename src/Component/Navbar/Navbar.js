@@ -4,7 +4,6 @@ import s from './Navbar.module.css'
 import SideBar from "../SideBar/SideBar";
 
 const Navbar = () => {
-    //let state = props.store.getState()
 
     return (       <div className={s.main}>
             <nav className={s.mainNav}>

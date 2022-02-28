@@ -15,14 +15,6 @@ class UserContainer extends React.Component {
 
         this.props.getUsersThunkCreator(this.props.currentPage, this.props.pagesize)
 
-        /*
-                this.props.Togle(true)
-                usersAPI.getUsersApi(this.props.currentPage,this.props.pagesize).then(data => {
-
-                    this.props.SetUsers(data.items)
-                    this.props.Togle(false)
-                })
-        */
     }
 
     SetUserPage = (p) => {
@@ -30,7 +22,6 @@ class UserContainer extends React.Component {
     }
 
     render() {
-        if(!this.props.Auth) return <Navigate to={"/login"} />
         return <>
             {
                 this.props.isfetching ? <Preloader/> : null
