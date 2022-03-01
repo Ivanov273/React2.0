@@ -45,6 +45,11 @@ export const ProfileAPI = {
          return instance.put(`profile/status/`,{status: status})
     }
 }
+export const LoginAPI = {
+    authorize(login,password,rememberMe){
+        return instance.post('auth/login',{login:login,password:password,rememberMe:rememberMe})
+    }
+}
 /*axios.get(`https://social-network.samuraijs.com/api/1.0/auth/me`,{
             withCredentials: true
         })*/

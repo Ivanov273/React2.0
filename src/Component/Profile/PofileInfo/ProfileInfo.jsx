@@ -6,20 +6,20 @@ import Preloader from "../../Common/Preloader";
 
 const ProfileInfo = (props) => {
     if (!props.profile) {
-       return <Preloader/>
-   }
+        return <Preloader/>
+    }
     return <div className={s.main}>
-<div>
         <div>
-            <img className={s.userImage}
-                 src={props.profile.photos.large != null ? props.profile.photos.small : userPhoto}/>
-        </div>
+            <div>
+                <img className={s.userImage}
+                     src={props.profile.photos.large != null ? props.profile.photos.small : userPhoto}/>
+            </div>
 
-        <div>
-            {props.profile.fullName}
+            <div>
+                {props.profile.fullName}
+            </div>
         </div>
-</div>
-        <ProfileStatus status={'hi i`m Mike'}  profilestatus={props.profilestatus} updateStatus={props.updateStatus} />
+        <ProfileStatus status={'hi i`m Mike'} profilestatus={props.profilestatus} updateStatus={props.updateStatus}/>
 
     </div>
 }
