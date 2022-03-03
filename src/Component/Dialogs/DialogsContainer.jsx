@@ -1,5 +1,5 @@
 import React from 'react'
-import {ActionCreatorAddDialog, ActionCreatorUpdateDialogText} from "../../Readux/Reducer-Dialog";
+import {ActionCreatorAddDialog} from "../../Readux/Reducer-Dialog";
 import Dialogs from "./Dialogs";
 import {connect} from "react-redux";
 import {WithAuthContainer} from "../../HOC/AuthHOC";
@@ -19,11 +19,8 @@ let mapStateToProps = (state) => {
 }
 let mapDispatchToProps = (dispatch) => {
     return {
-        OnChandeDialog: (text) => {
-            dispatch(ActionCreatorUpdateDialogText(text))
-        },
-        onaddDialogs: () => {
-            dispatch(ActionCreatorAddDialog())
+        onaddDialogs: (newDialog) => {
+            dispatch(ActionCreatorAddDialog(newDialog))
         }
     }
 }

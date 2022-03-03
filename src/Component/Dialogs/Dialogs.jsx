@@ -3,14 +3,13 @@ import s from './Dialogs.module.css'
 import DialogItem from './DialogItem/DialogItem'
 import MessageItem from './MessageItem/MessageItem'
 import {Navigate} from 'react-router-dom';
+import DialogsFormRedux from "./DialogsForm";
 
 const Dialogs = (props) => {
-    let ChandeDialog = (e) => {
-        let text = e.target.value
-        props.OnChandeDialog(text)
-    }
-    let AddDialog = () => {
-        props.onaddDialogs()
+
+    let onaddDialog = (value) => {
+        props.onaddDialogs(value.formdialog)
+        console.log(value.formdialog)
     }
     let DialogMass = props.DialogData.map(d => <DialogItem name={d.name} key={d.id} id={d.id}/>)
     let MessagesElement = props.TextData.map(t => <MessageItem key={t.id} text={t.text}/>)
@@ -27,9 +26,7 @@ const Dialogs = (props) => {
             <div className={s.messages}>
                 {MessagesElement}
                 <div>
-                    <textarea value={props.newDialog} placeholder='Enter your message' onChange={ChandeDialog} cols="20"
-                              rows="1"></textarea>
-                    <button onClick={AddDialog}>add</button>
+                <DialogsFormRedux  onSubmit={onaddDialog} />
                 </div>
             </div>
         </div>

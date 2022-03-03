@@ -5,15 +5,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e072e335-44cb-4f57-9b84-c517c01cce45" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/Component/Dialogs/DialogsForm.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Component/Profile/MyPosts/FormPost.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Component/Dialogs/Dialogs.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Component/Dialogs/Dialogs.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Component/Dialogs/DialogsContainer.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Component/Dialogs/DialogsContainer.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Component/Login/Login.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Component/Login/Login.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Component/Profile/PofileInfo/ProfileInfo.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Component/Profile/PofileInfo/ProfileInfo.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/HOC/AuthHOC.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/HOC/AuthHOC.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Readux/Reducer-Auth.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Readux/Reducer-Auth.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Readux/redux-store.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Readux/redux-store.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/api/api.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/api/api.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Component/Profile/MyPosts/MyPost.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Component/Profile/MyPosts/MyPost.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Component/Profile/MyPosts/MyPostContainer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Component/Profile/MyPosts/MyPostContainer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Readux/Reducer-Dialog.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Readux/Reducer-Dialog.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Readux/Reducer-Profile.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Readux/Reducer-Profile.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -192,7 +193,7 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="js.last.introduce.type" value="CONST" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/Component/Profile/PofileInfo" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/Component/Dialogs" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -207,11 +208,11 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\React\Project\react2.0\src\Component\Dialogs" />
+      <recent name="C:\React\Project\react2.0\src\Component\Profile\MyPosts" />
       <recent name="C:\React\Project\react2.0\src\Component\Profile\PofileInfo" />
       <recent name="C:\React\Project\react2.0\src\api" />
       <recent name="C:\React\Project\react2.0\src\Component\Header" />
-      <recent name="C:\React\Project\react2.0\src\Readux" />
-      <recent name="C:\React\Project\react2.0\src\Component\Profile" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\React\Project\react2.0\src\Component" />
@@ -291,7 +292,8 @@
       <workItem from="1645443725702" duration="5817000" />
       <workItem from="1645532134750" duration="9466000" />
       <workItem from="1646035450226" duration="12012000" />
-      <workItem from="1646136657074" duration="5719000" />
+      <workItem from="1646136657074" duration="6498000" />
+      <workItem from="1646297040564" duration="6122000" />
     </task>
     <servers />
   </component>

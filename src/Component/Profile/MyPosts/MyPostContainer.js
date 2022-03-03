@@ -1,8 +1,7 @@
 import React from 'react';
-import {ActionCreatorAddPost, ActionCreatorUpdatePostText} from "../../../Readux/Reducer-Profile";
+import {ActionCreatorAddPost} from "../../../Readux/Reducer-Profile";
 import MyPost from "./MyPost";
 import {connect} from "react-redux";
-
 
 let mapStateToProps = (state) => {
     return {
@@ -10,19 +9,13 @@ let mapStateToProps = (state) => {
         posts: state.ProfilePage.PostData
     }
 }
-let mapDispatchToProps = (dispatch)=> {
+
+let mapDispatchToProps = (dispatch) => {
     return {
-        onPostChange: (text)=> {
-                   dispatch(ActionCreatorUpdatePostText(text));
-                    },
-        onaddDialogs: ()=>{
-
-                dispatch(ActionCreatorAddPost());
-
+        onaddDialogs: (postvalue) => {
+            dispatch(ActionCreatorAddPost(postvalue));
         }
     }
 }
-const MyPostContainer = connect(mapStateToProps,mapDispatchToProps)(MyPost)
-
-
+const MyPostContainer = connect(mapStateToProps, mapDispatchToProps)(MyPost)
 export default MyPostContainer;

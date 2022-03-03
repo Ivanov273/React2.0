@@ -3,12 +3,11 @@ import {Field, reduxForm} from "redux-form";
 import {connect} from "react-redux";
 import {LoginThunk} from "../../Readux/Reducer-Auth";
 
-
 const LogiForm = (props) => {
     return (
         <form onSubmit={props.handleSubmit} >
             <div>
-                <Field type="text" name={'login'} component="input" placeholder='login'/>
+                <Field type="text" name={'login'} component="input" placeholder='login'  />
             </div>
             <div>
                 <Field type="text" name={'password'} component="input" placeholder='passowrd'/>
