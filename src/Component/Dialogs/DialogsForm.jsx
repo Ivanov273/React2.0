@@ -1,13 +1,15 @@
 import React from 'react';
 import {Field, reduxForm} from "redux-form";
+import {Textarea} from "../Common/FormControls/FormControls";
+import {maxleight, required} from "../../utils/validators/validators";
 
-
+const  maxleight20 = maxleight(20)
 const DialogForm = (props) => {
-    //console.log(props.newPostText)
+
     return (
         <form onSubmit={props.handleSubmit} >
             <div>
-                <Field name={'formdialog'} component="textarea"  placeholder='Enter your message'
+                <Field name={'formdialog'} component={Textarea} validate={[required,maxleight20]}  placeholder='Enter your message'
                     />
             </div>
 

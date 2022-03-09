@@ -2,7 +2,7 @@ import React from 'react';
 import {connect} from 'react-redux';
 import {followUsersThunkCreator, getUsersThunkCreator, unfollowUsersThunkCreator} from '../../Readux/Reducer-Users';
 import Users from './Users';
-import Preloader from "../Common/Preloader";
+import Preloader from "../Common/Preloader/Preloader";
 import {Navigate} from "react-router-dom";
 import {WithAuthContainer} from "../../HOC/AuthHOC";
 import {compose} from "redux";

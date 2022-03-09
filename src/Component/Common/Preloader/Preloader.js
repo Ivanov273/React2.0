@@ -1,5 +1,5 @@
-import s from "../Users/Users.module.css";
-import loader from "../../img/loader2.gif";
+import s from "../../Users/Users.module.css";
+import loader from "../../../img/loader2.gif";
 import React from "react";
 
 let Preloader = ()=>{

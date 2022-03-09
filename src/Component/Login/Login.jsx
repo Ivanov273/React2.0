@@ -2,18 +2,20 @@ import React from 'react'
 import {Field, reduxForm} from "redux-form";
 import {connect} from "react-redux";
 import {LoginThunk} from "../../Readux/Reducer-Auth";
-
+import {Input} from "../Common/FormControls/FormControls";
+import {maxleight, required} from "../../utils/validators/validators";
+const maxleight20 = maxleight(20)
 const LogiForm = (props) => {
     return (
         <form onSubmit={props.handleSubmit} >
             <div>
-                <Field type="text" name={'login'} component="input" placeholder='login'  />
+                <Field type="text" name={'login'} component={Input} validate={[required,maxleight20]} placeholder='login'  />
             </div>
             <div>
-                <Field type="text" name={'password'} component="input" placeholder='passowrd'/>
+                <Field type="text" name={'password'} component={Input} validate={[required,maxleight20]} placeholder='passowrd'/>
             </div>
             <div>
-                <Field type="checkbox" name={'remember me'} component="input" /> remember me
+                <Field type="checkbox" name={'remember me'} component={Input} /> remember me
             </div>
             <div>
                 <button>Login</button>
