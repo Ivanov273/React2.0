@@ -29,7 +29,7 @@ const instance = axios.create({
 
      },
      apiAuth ()  {
-         return     instance.get(`auth/me`)
+         return    LoginAPI.apiAuth()
 
      }
  }
@@ -46,8 +46,15 @@ export const ProfileAPI = {
     }
 }
 export const LoginAPI = {
-    authorize(login,password,rememberMe){
-        return instance.post('auth/login',{login:login,password:password,rememberMe:rememberMe})
+    authorize(email,password,rememberMe = false){
+        return instance.post('auth/login',{email,password,rememberMe})
+    } ,
+    deleteauthorize(login,password,rememberMe){
+        return instance.delete('auth/login')
+    },
+    apiAuth ()  {
+        return     instance.get(`auth/me`)
+
     }
 }
 /*axios.get(`https://social-network.samuraijs.com/api/1.0/auth/me`,{

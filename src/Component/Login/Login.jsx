@@ -4,18 +4,21 @@ import {connect} from "react-redux";
 import {LoginThunk} from "../../Readux/Reducer-Auth";
 import {Input} from "../Common/FormControls/FormControls";
 import {maxleight, required} from "../../utils/validators/validators";
-const maxleight20 = maxleight(20)
+import {Navigate} from 'react-router-dom';
+const maxleight20 = maxleight(30)
 const LogiForm = (props) => {
     return (
-        <form onSubmit={props.handleSubmit} >
+        <form onSubmit={props.handleSubmit}>
             <div>
-                <Field type="text" name={'login'} component={Input} validate={[required,maxleight20]} placeholder='login'  />
+                <Field type="text" name={'email'} component={Input} validate={[required, maxleight20]}
+                       placeholder='login'/>
             </div>
             <div>
-                <Field type="text" name={'password'} component={Input} validate={[required,maxleight20]} placeholder='passowrd'/>
+                <Field type={"password"} name={'password'}  component={Input} validate={[required, maxleight20]}
+                       placeholder='passowrd'/>
             </div>
             <div>
-                <Field type="checkbox" name={'remember me'} component={Input} /> remember me
+                <Field type="checkbox" name={'rememberMe'} component={Input}/> remember me
             </div>
             <div>
                 <button>Login</button>
@@ -29,21 +32,21 @@ const LoginFormRedux = reduxForm({
 })(LogiForm)
 
 const Loginpage = (props) => {
-    const onSubmit=(formData)=>{
-       // console.log(formData)
-        console.log(props)
-        props.setlogin(formData.login,formData.password,formData.rememberMe)
+    const onSubmit = (formData) => {
+        props.LoginThunk(formData.email, formData.password, formData.rememberMe)
     }
-   //console.log(props)
+    if(props.isAuth){
+       return  <Navigate to={"/profile"}/>
+                         }
     return <div>
         <h1>LOGIN</h1>
-        <LoginFormRedux onSubmit={onSubmit} setlogin={props.LoginThunk} />
+        <LoginFormRedux onSubmit={onSubmit} />
     </div>
 }
 let mapStateToLogin = (state) => {
     return {
-        login: state.Auth.login2,
+        isAuth: state.Auth.isAuth,
     }
 }
 
-export default connect(mapStateToLogin,{LoginThunk})(Loginpage)
+export default connect(mapStateToLogin, {LoginThunk})(Loginpage)

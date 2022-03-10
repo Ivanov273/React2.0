@@ -9,7 +9,6 @@ const Dialogs = (props) => {
 
     let onaddDialog = (value) => {
         props.onaddDialogs(value.formdialog)
-        console.log(value.formdialog)
     }
     let DialogMass = props.DialogData.map(d => <DialogItem name={d.name} key={d.id} id={d.id}/>)
     let MessagesElement = props.TextData.map(t => <MessageItem key={t.id} text={t.text}/>)

@@ -1,56 +1,57 @@
 import {LoginAPI, usersAPI as loginAPI, usersAPI} from "../api/api";
 
 const SETAUTH = 'SETAUTH'
-const SETLOGIN = 'SETLOGIN'
+const DELETE_SETAUTH = 'DELETE_SETAUTH'
 
 let initstate = {
     userid: '',
     login: '',
     email: '',
-    isAuth: false,
-    login2: 'adasdasd',
-    password: null,
-    rememberMe: false
+    isAuth: false
 }
 const reducerAuth = (state = initstate, action) => {
     switch (action.type) {
         case SETAUTH:
            return {
                ...state,
-               ...action.data,
-               isAuth : true
+               ...action.payload
            }
-           case SETLOGIN:
+           case DELETE_SETAUTH:
            return {
                ...state,
-               login2: action.login,
-               password: action.password,
-               rememberMe : action.rememberMe
+              ...action.payload
            }
         default:
             return state
     }
 }
-export const SetAuth = (id,login,email) => ({type: SETAUTH,data:{id,login,email}})
-export const setLogin = (login,password,rememberMe) => ({type: SETLOGIN,login,password,rememberMe})
+export const SetAuth = (id,login,email,isAuth) => ({type: SETAUTH,payload:{id,login,email,isAuth}})
+export const SetAuthdelete = (id,login,email,isAuth) => ({type: DELETE_SETAUTH,payload:{id,login,email,isAuth}})
 export const AuthThunk = (dispatch)=> {
     return (dispatch)=> {
         usersAPI.apiAuth().then(response => {
             if (response.data.resultCode === 0) {
                 let {id,login,email} = response.data.data
-                dispatch(SetAuth(id,login,email))
+                dispatch(SetAuth(id,login,email,true))
            }
     })
 }
 }
-export const LoginThunk = (login,password,rememberMe)=> {
-    debugger
+export const LoginThunk = (email,password,rememberMe)=> {
+
     return (dispatch)=> {
-        LoginAPI.authorize(login,password,rememberMe).then(response => {
+        LoginAPI.authorize(email,password,rememberMe).then(response => {
             if (response.data.resultCode === 0) {
-                //let {id,login,email} = response.data.data
-                console.log('assssassssssa')
-                dispatch(setLogin(login,password,rememberMe))
+                dispatch(AuthThunk())
+           }
+    })
+}
+}
+export const deleteLogin = ()=> {
+    return (dispatch)=> {
+        LoginAPI.deleteauthorize().then(response => {
+            if (response.data.resultCode === 0) {
+                dispatch(SetAuth(null,null,null,false))
            }
     })
 }
