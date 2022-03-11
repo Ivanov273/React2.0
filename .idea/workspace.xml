@@ -6,12 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="e072e335-44cb-4f57-9b84-c517c01cce45" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Component/Dialogs/Dialogs.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Component/Dialogs/Dialogs.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Component/Header/Header.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Component/Header/Header.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Component/Header/HeaderContainer.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Component/Header/HeaderContainer.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Component/Login/Login.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Component/Login/Login.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Readux/Reducer-Auth.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Readux/Reducer-Auth.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/api/api.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/api/api.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -292,7 +287,7 @@
       <workItem from="1646136657074" duration="6498000" />
       <workItem from="1646297040564" duration="7671000" />
       <workItem from="1646827980721" duration="13252000" />
-      <workItem from="1646941343216" duration="388000" />
+      <workItem from="1646941343216" duration="4247000" />
     </task>
     <servers />
   </component>

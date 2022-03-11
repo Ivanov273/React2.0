@@ -26,7 +26,6 @@ const reducerAuth = (state = initstate, action) => {
     }
 }
 export const SetAuth = (id,login,email,isAuth) => ({type: SETAUTH,payload:{id,login,email,isAuth}})
-export const SetAuthdelete = (id,login,email,isAuth) => ({type: DELETE_SETAUTH,payload:{id,login,email,isAuth}})
 export const AuthThunk = (dispatch)=> {
     return (dispatch)=> {
         usersAPI.apiAuth().then(response => {
