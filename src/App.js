@@ -9,8 +9,18 @@ import DialogsContainer from "./Component/Dialogs/DialogsContainer";
 import MyUsersContainer from "./Component/Users/Users-Container";
 import ProfileContainer from "./Component/Profile/ProfileContainer";
 import HeaderContainer from "./Component/Header/HeaderContainer";
-const App = () => {
-
+import {connect} from "react-redux";
+import {InitializeThunk} from "./Readux/Reducer-App";
+import Preloader from "./Component/Common/Preloader/Preloader";
+class App extends React.Component  {
+    componentDidMount() {
+      this.props.InitializeThunk()
+    }
+    render() {
+        console.log(this.props.initialize)
+        if (!this.props.initialize){
+            return <Preloader />
+        }
     return (
         <div className="wrapper">
             <HeaderContainer/>
@@ -31,5 +41,11 @@ const App = () => {
         </div>
     );
 }
+}
 
-export default App;
+const mapStateToProps = (state)=>{
+    return{
+initialize: state.app.initialize
+}
+}
+export default connect(mapStateToProps,{InitializeThunk})(App) ;

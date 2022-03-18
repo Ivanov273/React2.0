@@ -12,7 +12,7 @@ const Dialogs = (props) => {
     }
     let DialogMass = props.DialogData.map(d => <DialogItem name={d.name} key={d.id} id={d.id}/>)
     let MessagesElement = props.TextData.map(t => <MessageItem key={t.id} text={t.text}/>)
-    if(!props.Auth) return <Navigate to={"/login"} />
+    //if(!props.Auth) return <Navigate to={"/login"} />
     return (
         <div className={s.container}>
             <div className={s.dialogs}>

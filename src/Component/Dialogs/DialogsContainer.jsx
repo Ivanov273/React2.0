@@ -5,7 +5,7 @@ import {connect} from "react-redux";
 import {WithAuthContainer} from "../../HOC/AuthHOC";
 import {compose} from "redux";
 
-let RedirectComponent = WithAuthContainer(Dialogs)
+//let RedirectComponent = WithAuthContainer(Dialogs)
 
 
 let mapStateToProps = (state) => {
@@ -25,5 +25,5 @@ let mapDispatchToProps = (dispatch) => {
     }
 }
 export default compose(connect(mapStateToProps, mapDispatchToProps),
-    WithAuthContainer
-)(RedirectComponent)
+   // WithAuthContainer
+)(Dialogs)

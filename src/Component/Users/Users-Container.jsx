@@ -6,6 +6,14 @@ import Preloader from "../Common/Preloader/Preloader";
 import {Navigate} from "react-router-dom";
 import {WithAuthContainer} from "../../HOC/AuthHOC";
 import {compose} from "redux";
+import {
+    SetcurrentPage,
+    Setisfetching, Setisfetchingprogress,
+    SetPageSize,
+    SetTotalCount,
+    SetUsers,
+    SetUsersage
+} from "../../Readux/Users-selectors";
 
 
 class UserContainer extends React.Component {
@@ -46,13 +54,13 @@ let mapStateToProps = (state) => ({
 })
 let mapStateToUsers = (state) => {
     return {
-        Users: state.usersPage.users,
-        TotalCount: state.usersPage.TotalCount,
-        pagesize: state.usersPage.PageSize,
-        currentPage: state.usersPage.currentPage,
-        isfetching: state.usersPage.isfetching,
-        isfetchingprogress: state.usersPage.isfetchingprogress,
-        Auth: state.Auth.isAuth
+        Users: SetUsersage(state),
+        TotalCount: SetTotalCount(state),
+        pagesize: SetPageSize(state),
+        currentPage: SetcurrentPage(state),
+        isfetching: Setisfetching(state),
+        isfetchingprogress: Setisfetchingprogress(state),
+
     }
 }
 
@@ -61,8 +69,8 @@ export default compose(connect(mapStateToUsers, {
     followUsersThunkCreator,
     unfollowUsersThunkCreator
 }),
-    WithAuthContainer
-)(RedirectComponent)
+    //WithAuthContainer
+)(UserContainer)
 
 
 

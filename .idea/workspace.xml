@@ -4,7 +4,17 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e072e335-44cb-4f57-9b84-c517c01cce45" name="Default Changelist" comment="" />
+    <list default="true" id="e072e335-44cb-4f57-9b84-c517c01cce45" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/Readux/Reducer-App.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Readux/Users-selectors.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Component/Dialogs/Dialogs.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Component/Dialogs/Dialogs.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Component/Dialogs/DialogsContainer.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Component/Dialogs/DialogsContainer.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Component/Header/HeaderContainer.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Component/Header/HeaderContainer.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Component/Users/Users-Container.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Component/Users/Users-Container.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Readux/redux-store.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Readux/redux-store.js" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -182,7 +192,7 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="js.last.introduce.type" value="CONST" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/Component/Dialogs" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/Readux" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -197,11 +207,11 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\React\Project\react2.0\src\Readux" />
       <recent name="C:\React\Project\react2.0\src\Component\Dialogs" />
       <recent name="C:\React\Project\react2.0\src\Component\Profile\MyPosts" />
       <recent name="C:\React\Project\react2.0\src\Component\Profile\PofileInfo" />
       <recent name="C:\React\Project\react2.0\src\api" />
-      <recent name="C:\React\Project\react2.0\src\Component\Header" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\React\Project\react2.0\src\Component\Common\Preloader" />
@@ -285,6 +295,7 @@
       <workItem from="1646297040564" duration="7671000" />
       <workItem from="1646827980721" duration="13252000" />
       <workItem from="1646941343216" duration="4247000" />
+      <workItem from="1647613935163" duration="2282000" />
     </task>
     <servers />
   </component>
