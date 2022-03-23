@@ -5,7 +5,10 @@ import App from './App';
 import store from './Readux/redux-store'
 import {BrowserRouter} from "react-router-dom";
 import {Provider} from "react-redux";
-
+setInterval(()=>{
+    // eslint-disable-next-line no-unused-expressions
+    store.dispatch({type: 'FAKE'}),1000
+})
     ReactDOM.render(
         <BrowserRouter>
             <Provider store={store}>

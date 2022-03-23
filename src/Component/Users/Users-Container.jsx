@@ -7,12 +7,12 @@ import {Navigate} from "react-router-dom";
 import {WithAuthContainer} from "../../HOC/AuthHOC";
 import {compose} from "redux";
 import {
+    getUsersSelector,
     SetcurrentPage,
     Setisfetching, Setisfetchingprogress,
     SetPageSize,
     SetTotalCount,
-    SetUsers,
-    SetUsersage
+
 } from "../../Readux/Users-selectors";
 
 
@@ -30,6 +30,7 @@ class UserContainer extends React.Component {
     }
 
     render() {
+        console.log('render')
         return <>
             {
                 this.props.isfetching ? <Preloader/> : null
@@ -48,13 +49,10 @@ class UserContainer extends React.Component {
 }
 let RedirectComponent = WithAuthContainer(UserContainer)
 
-let mapStateToProps = (state) => ({
-    profile: state.ProfilePage.profile,
-
-})
 let mapStateToUsers = (state) => {
+    console.log('mapStateToUsers')
     return {
-        Users: SetUsersage(state),
+        Users: getUsersSelector(state),
         TotalCount: SetTotalCount(state),
         pagesize: SetPageSize(state),
         currentPage: SetcurrentPage(state),

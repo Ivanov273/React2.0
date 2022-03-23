@@ -17,7 +17,6 @@ class App extends React.Component  {
       this.props.InitializeThunk()
     }
     render() {
-        console.log(this.props.initialize)
         if (!this.props.initialize){
             return <Preloader />
         }
