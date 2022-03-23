@@ -30,7 +30,6 @@ class UserContainer extends React.Component {
     }
 
     render() {
-        console.log('render')
         return <>
             {
                 this.props.isfetching ? <Preloader/> : null
@@ -49,8 +48,7 @@ class UserContainer extends React.Component {
 }
 let RedirectComponent = WithAuthContainer(UserContainer)
 
-let mapStateToUsers = (state) => {
-    console.log('mapStateToUsers')
+let mapStateToProps = (state) => {
     return {
         Users: getUsersSelector(state),
         TotalCount: SetTotalCount(state),
@@ -62,7 +60,7 @@ let mapStateToUsers = (state) => {
     }
 }
 
-export default compose(connect(mapStateToUsers, {
+export default compose(connect(mapStateToProps, {
     getUsersThunkCreator,
     followUsersThunkCreator,
     unfollowUsersThunkCreator

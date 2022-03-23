@@ -3,6 +3,7 @@ import s from './ProfileInfo.module.css'
 import userPhoto from "../../../img/rik.jpg";
 import ProfileStatus from "./ProfileStatus";
 import Preloader from "../../Common/Preloader/Preloader";
+import ProfileStatusHooc from "./ProfileStatusHooc";
 
 const ProfileInfo = (props) => {
     if (!props.profile) {
@@ -19,7 +20,7 @@ const ProfileInfo = (props) => {
                 {props.profile.fullName}
             </div>
         </div>
-        <ProfileStatus status={'hi i`m Mike'} profilestatus={props.profilestatus} updateStatus={props.updateStatus}/>
+        <ProfileStatusHooc status={'hi i`m Mike'} profilestatus={props.profilestatus} updateStatus={props.updateStatus}/>
 
     </div>
 }

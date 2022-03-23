@@ -5,14 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e072e335-44cb-4f57-9b84-c517c01cce45" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/Component/Profile/PofileInfo/ProfileStatusHooc.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Component/Profile/PofileInfo/ProfileInfo.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Component/Profile/PofileInfo/ProfileInfo.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Component/Users/Users-Container.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Component/Users/Users-Container.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Readux/Reducer-Users.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Readux/Reducer-Users.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Readux/Users-selectors.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Readux/Users-selectors.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -191,7 +187,7 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="js.last.introduce.type" value="CONST" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/Readux" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/Component/Profile/PofileInfo" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -206,11 +202,11 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\React\Project\react2.0\src\Component\Profile\PofileInfo" />
+      <recent name="C:\React\Project\react2.0\src\Component\Profile" />
       <recent name="C:\React\Project\react2.0\src\Readux" />
       <recent name="C:\React\Project\react2.0\src\Component\Dialogs" />
       <recent name="C:\React\Project\react2.0\src\Component\Profile\MyPosts" />
-      <recent name="C:\React\Project\react2.0\src\Component\Profile\PofileInfo" />
-      <recent name="C:\React\Project\react2.0\src\api" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\React\Project\react2.0\src\Component\Common\Preloader" />
@@ -295,7 +291,7 @@
       <workItem from="1646827980721" duration="13252000" />
       <workItem from="1646941343216" duration="4247000" />
       <workItem from="1647613935163" duration="2652000" />
-      <workItem from="1648019157771" duration="3268000" />
+      <workItem from="1648019157771" duration="7703000" />
     </task>
     <servers />
   </component>
@@ -343,7 +339,13 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="CUSTOM_BOOLEAN_PROPERTIES">
+                <map>
+                  <entry key="Show.Git.Branches" value="false" />
+                </map>
+              </option>
+            </State>
           </value>
         </entry>
       </map>
