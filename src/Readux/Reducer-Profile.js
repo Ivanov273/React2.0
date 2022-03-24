@@ -15,7 +15,7 @@ let initstate = {
         {id: 7, text: 'acascavdvdvdscascsac', like: 22}
     ],
     profile: null,
-    profilestatus: '5grgergerg'
+    profilestatus: ''
 }
 const reducerProfile = (state = initstate, action) => {
 
