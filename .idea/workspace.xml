@@ -6,8 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="e072e335-44cb-4f57-9b84-c517c01cce45" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Component/Profile/PofileInfo/ProfileStatusHooc.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Component/Profile/PofileInfo/ProfileStatusHooc.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Readux/Reducer-Profile.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Readux/Reducer-Profile.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Component/Profile/MyPosts/MyPost.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Component/Profile/MyPosts/MyPost.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -291,7 +290,8 @@
       <workItem from="1646941343216" duration="4247000" />
       <workItem from="1647613935163" duration="2652000" />
       <workItem from="1648019157771" duration="10195000" />
-      <workItem from="1648119438777" duration="1491000" />
+      <workItem from="1648119438777" duration="2712000" />
+      <workItem from="1648728085681" duration="2536000" />
     </task>
     <servers />
   </component>
