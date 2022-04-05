@@ -3,9 +3,9 @@ import Post from "./Post/Post";
 import LoginPostFormRedux from "./FormPost";
 
 const MyPost = React.memo(props=> {
-    console.log('render')
-    console.log(props)
-    let PostMass = props.posts.map(p => <Post message={p.text} key={p.id} like={p.like}/>)
+    let PostMass = [...props.posts].reverse().map(p => <Post message={p.text} key={p.id} like={p.like}/>)
+
+
     let addPosts = (formData) => {
         props.onaddDialogs(formData.post)
     }

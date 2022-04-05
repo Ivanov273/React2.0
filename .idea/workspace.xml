@@ -5,8 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e072e335-44cb-4f57-9b84-c517c01cce45" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/Readux/Reducer-Profile.test.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Component/Profile/MyPosts/MyPost.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Component/Profile/MyPosts/MyPost.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Readux/Reducer-Profile.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Readux/Reducer-Profile.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -185,13 +187,14 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="js.last.introduce.type" value="CONST" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/Component/Profile/PofileInfo" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/Readux" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
     <property name="node.js.path.for.package.tslint" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
+    <property name="nodejs.jest.jest_package" value="$PROJECT_DIR$/node_modules/react-scripts" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="nodejs_package_manager_path" value="npm" />
@@ -200,9 +203,9 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\React\Project\react2.0\src\Readux" />
       <recent name="C:\React\Project\react2.0\src\Component\Profile\PofileInfo" />
       <recent name="C:\React\Project\react2.0\src\Component\Profile" />
-      <recent name="C:\React\Project\react2.0\src\Readux" />
       <recent name="C:\React\Project\react2.0\src\Component\Dialogs" />
       <recent name="C:\React\Project\react2.0\src\Component\Profile\MyPosts" />
     </key>
@@ -214,15 +217,64 @@
       <recent name="C:\React\Project\react2.0\src\Component\Header\Dialogs" />
     </key>
   </component>
-  <component name="RunManager" selected="Node.js.News.jsx">
-    <configuration name="News.jsx" type="NodeJSConfigurationType" temporary="true" nameIsGenerated="true" path-to-js-file="News.jsx" working-dir="$PROJECT_DIR$/src/Component/News">
+  <component name="RunManager" selected="Jest.test for delete">
+    <configuration name="test for delete" type="JavaScriptTestRunnerJest" temporary="true" nameIsGenerated="true">
+      <node-interpreter value="project" />
+      <node-options value="" />
+      <jest-package value="$PROJECT_DIR$/node_modules/react-scripts" />
+      <working-dir value="$PROJECT_DIR$" />
+      <envs />
+      <scope-kind value="TEST" />
+      <test-file value="$PROJECT_DIR$/src/Readux/Reducer-Profile.test.js" />
+      <test-names>
+        <test-name value="test for delete" />
+      </test-names>
       <method v="2" />
     </configuration>
-    <configuration name="start" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
+    <configuration name="test for has text" type="JavaScriptTestRunnerJest" temporary="true" nameIsGenerated="true">
+      <node-interpreter value="project" />
+      <node-options value="" />
+      <jest-package value="$PROJECT_DIR$/node_modules/react-scripts" />
+      <working-dir value="$PROJECT_DIR$" />
+      <envs />
+      <scope-kind value="TEST" />
+      <test-file value="$PROJECT_DIR$/src/Readux/Reducer-Profile.test.js" />
+      <test-names>
+        <test-name value="test for has text" />
+      </test-names>
+      <method v="2" />
+    </configuration>
+    <configuration name="test for length (1)" type="JavaScriptTestRunnerJest" temporary="true" nameIsGenerated="true">
+      <node-interpreter value="project" />
+      <node-options value="" />
+      <jest-package value="$PROJECT_DIR$/node_modules/react-scripts" />
+      <working-dir value="$PROJECT_DIR$" />
+      <envs />
+      <scope-kind value="TEST" />
+      <test-file value="$PROJECT_DIR$/src/Readux/Reducer-Profile.test.js" />
+      <test-names>
+        <test-name value="test for length" />
+      </test-names>
+      <method v="2" />
+    </configuration>
+    <configuration name="test for length" type="JavaScriptTestRunnerJest" temporary="true" nameIsGenerated="true">
+      <node-interpreter value="project" />
+      <node-options value="" />
+      <jest-package value="$PROJECT_DIR$/node_modules/react-scripts" />
+      <working-dir value="$PROJECT_DIR$" />
+      <envs />
+      <scope-kind value="TEST" />
+      <test-file value="$PROJECT_DIR$/src/Readux/Reducer-Profile-test.js" />
+      <test-names>
+        <test-name value="test for length" />
+      </test-names>
+      <method v="2" />
+    </configuration>
+    <configuration name="test" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
       <package-json value="$PROJECT_DIR$/package.json" />
       <command value="run" />
       <scripts>
-        <script value="start" />
+        <script value="test" />
       </scripts>
       <node-interpreter value="project" />
       <envs />
@@ -230,8 +282,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="npm.start" />
-        <item itemvalue="Node.js.News.jsx" />
+        <item itemvalue="Jest.test for delete" />
+        <item itemvalue="Jest.test for has text" />
+        <item itemvalue="Jest.test for length (1)" />
+        <item itemvalue="Jest.test for length" />
+        <item itemvalue="npm.test" />
       </list>
     </recent_temporary>
   </component>
@@ -291,7 +346,8 @@
       <workItem from="1647613935163" duration="2652000" />
       <workItem from="1648019157771" duration="10195000" />
       <workItem from="1648119438777" duration="2712000" />
-      <workItem from="1648728085681" duration="2536000" />
+      <workItem from="1648728085681" duration="5056000" />
+      <workItem from="1649149120550" duration="5444000" />
     </task>
     <servers />
   </component>

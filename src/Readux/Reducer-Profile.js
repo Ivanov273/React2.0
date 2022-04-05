@@ -1,5 +1,6 @@
 import {ProfileAPI, usersAPI} from "../api/api";
 const ADD_POST = 'ADD-POST'
+const DELETE_POST = 'DELETE_POST'
 const SET_USERS_PROFILE = 'SET_USERS_PROFILE'
 const SET_STATUS_PROFILE = 'SET_STATUS_PROFILE'
 const UPDATE_STATUS_PROFILE = 'UPDATE_STATUS_PROFILE'
@@ -30,6 +31,12 @@ const reducerProfile = (state = initstate, action) => {
                 ...state,
                 PostData: [...state.PostData, newelement]
             }
+            case     DELETE_POST:
+            debugger
+                return {
+                ...state,
+                PostData: state.PostData.filter(item=>item.id !== action.id)
+            }
             case     SET_USERS_PROFILE:
             return {
                 ...state,
@@ -51,6 +58,7 @@ const reducerProfile = (state = initstate, action) => {
     }
 }
 export const ActionCreatorAddPost = (postvalue) => ({type: ADD_POST,postvalue})
+export const ActionCreatorDeletePost = (id) => ({type: DELETE_POST,id})
 export const SetUsersProfile = (usersprofile) => ({type: SET_USERS_PROFILE, usersprofile})
 export const SetStatusProfile = (status) => ({type: SET_STATUS_PROFILE, status})
 export const ProfileThunk = (userid) =>{
