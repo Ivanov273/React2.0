@@ -5,7 +5,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e072e335-44cb-4f57-9b84-c517c01cce45" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/Component/Profile/PofileInfo/ProfileStatus.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Component/Profile/PofileInfo/ProfileInfo.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Component/Profile/PofileInfo/ProfileInfo.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Component/Profile/Profile.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Component/Profile/Profile.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Component/Profile/ProfileContainer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Component/Profile/ProfileContainer.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Readux/Reducer-Profile.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Readux/Reducer-Profile.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/api/api.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/api/api.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -196,6 +202,7 @@
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="configurable.group.tools" />
+    <property name="ts.external.directory.path" value="C:\Program Files\JetBrains\WebStorm 2021.3.1\plugins\JavaScriptLanguage\jsLanguageServicesImpl\external" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
@@ -267,11 +274,11 @@
       </test-names>
       <method v="2" />
     </configuration>
-    <configuration name="test" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
+    <configuration name="start" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
       <package-json value="$PROJECT_DIR$/package.json" />
       <command value="run" />
       <scripts>
-        <script value="test" />
+        <script value="start" />
       </scripts>
       <node-interpreter value="project" />
       <envs />
@@ -279,11 +286,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="npm.start" />
         <item itemvalue="Jest.test for delete" />
         <item itemvalue="Jest.test for has text" />
         <item itemvalue="Jest.test for length (1)" />
         <item itemvalue="Jest.test for length" />
-        <item itemvalue="npm.test" />
       </list>
     </recent_temporary>
   </component>
@@ -345,6 +352,8 @@
       <workItem from="1648119438777" duration="2712000" />
       <workItem from="1648728085681" duration="5056000" />
       <workItem from="1649149120550" duration="5444000" />
+      <workItem from="1663607938426" duration="5884000" />
+      <workItem from="1663831825706" duration="10546000" />
     </task>
     <servers />
   </component>

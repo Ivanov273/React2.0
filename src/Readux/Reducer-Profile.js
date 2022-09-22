@@ -1,5 +1,7 @@
 import {usersAPI} from "../api/api";
+
 const ADD_POST = 'ADD-POST'
+const EDIT_STATUS = 'EDIT_STATUS'
 const UPDATE_NEW_TEXT_PROFILE = 'UPDATE-NEW-TEXT-PROFILE'
 const SET_USERS_PROFILE = 'SET_USERS_PROFILE'
 
@@ -14,7 +16,8 @@ let initstate = {
         {id: 7, text: 'acascavdvdvdscascsac', like: 22}
     ],
     newPostText: 'It kamasutra',
-    profile: null
+    profile: null,
+    profilestatus: 'sssscscs cs'
 }
 const reducerProfile = (state = initstate, action) => {
 
@@ -35,10 +38,15 @@ const reducerProfile = (state = initstate, action) => {
                 ...state,
                 newPostText: action.newText
             }
-            case     SET_USERS_PROFILE:
+        case     SET_USERS_PROFILE:
             return {
                 ...state,
                 profile: action.usersprofile
+            }
+        case     EDIT_STATUS:
+            return {
+                ...state,
+                profilestatus: action.newprofilestatus
             }
 
         default:
@@ -46,14 +54,33 @@ const reducerProfile = (state = initstate, action) => {
     }
 }
 export const ActionCreatorAddPost = () => ({type: ADD_POST})
+export const ActionCreatorEditStatust = (newprofilestatus) => ({type: EDIT_STATUS, newprofilestatus: newprofilestatus})
 export const ActionCreatorUpdatePostText = (text) => ({type: UPDATE_NEW_TEXT_PROFILE, newText: text})
 export const SetUsersProfile = (usersprofile) => ({type: SET_USERS_PROFILE, usersprofile})
-export const ProfileThunk = (userid) =>{
-    return (dispatch)=>{
+export const ProfileThunk = (userid) => {
+    return (dispatch) => {
         usersAPI.getProfile(userid).then(response => {
 
             dispatch(SetUsersProfile(response.data))
         })
     }
 }
+export const ProfileThunkStatus = (userid) => {
+    return (dispatch) => {
+        usersAPI.apiProfileStatus(userid).then(response => {
+            dispatch(ActionCreatorEditStatust(response.data))
+
+        })
+    }
+}
+export const UpdateProfileThunkStatus = (status) => {
+    return (dispatch) => {
+        usersAPI.apiUpdateProfileStatus(status).then(response => {
+            if (response.data.resultCode === 0) {
+                dispatch(ActionCreatorEditStatust(status))
+            }
+        })
+    }
+}
+
 export default reducerProfile

@@ -1,14 +1,13 @@
 import React from 'react';
 import Profile from "./Profile";
-import axios from "axios";
 import {connect} from "react-redux";
-import {ProfileThunk, SetUsersProfile} from "../../Readux/Reducer-Profile";
-import {Navigate, useParams} from "react-router-dom";
-import {WithAuthContainer} from "../../HOC/AuthHOC";
+import {ProfileThunk, ProfileThunkStatus, UpdateProfileThunkStatus} from "../../Readux/Reducer-Profile";
+import {useParams} from "react-router-dom";
 import {compose} from "redux";
 
 
 const withRouter = WrappedComponent => props => {
+
     const params = useParams();
     return (
         <WrappedComponent
@@ -20,30 +19,32 @@ const withRouter = WrappedComponent => props => {
 
 class ProfileContainer extends React.Component {
     componentDidMount() {
-
         let userid = this.props.params.userId
-        if(!userid){
-            userid = 2
+        if (!userid) {
+            userid = 22189
         }
         this.props.ProfileThunk(userid)
+        this.props.ProfileThunkStatus(userid)
     }
 
     render() {
         return <div>
-            <Profile {...this.props} profile={this.props.profile}/>
+            <Profile {...this.props} profile={this.props.profile}
+                     UpdateProfileThunkStatus={this.props.UpdateProfileThunkStatus}
+                     />
         </div>
     }
 }
 
-let RedirectComponent = WithAuthContainer(ProfileContainer)
 let mapStateToProps = (state) => ({
     profile: state.ProfilePage.profile,
+    profilestatus: state.ProfilePage.profilestatus
 
 })
 
-const ProfileContainerwithRouter = withRouter(RedirectComponent)
-export default compose(connect(mapStateToProps, {ProfileThunk}),
-    withRouter,
-    WithAuthContainer)(ProfileContainerwithRouter)
+//const ProfileContainerwithRouter = withRouter(RedirectComponent)
+export default compose(connect(mapStateToProps, {ProfileThunk, ProfileThunkStatus, UpdateProfileThunkStatus}),
+    withRouter
+)(ProfileContainer)
 
 
