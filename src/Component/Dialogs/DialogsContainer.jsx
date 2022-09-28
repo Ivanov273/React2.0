@@ -19,11 +19,8 @@ let mapStateToProps = (state) => {
 }
 let mapDispatchToProps = (dispatch) => {
     return {
-        OnChandeDialog: (text) => {
-            dispatch(ActionCreatorUpdateDialogText(text))
-        },
-        onaddDialogs: () => {
-            dispatch(ActionCreatorAddDialog())
+        onaddDialogs: (values) => {
+            dispatch(ActionCreatorAddDialog(values))
         }
     }
 }

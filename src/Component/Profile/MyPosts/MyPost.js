@@ -1,27 +1,44 @@
 import React from 'react';
 import Post from "./Post/Post";
+import {Field, reduxForm} from "redux-form";
+import {maxLength15, minLength2,  required} from "../../../utils/validators";
+import {renderField} from "../../FormControls/FormsControl";
+
+
+
 
 const MyPost = (props) => {
 
     let PostMass = props.posts.map(p => <Post message={p.text} key={p.id} like={p.like}/>)
-    let addPost = () => {
-        props.onaddDialogs()
+    let addPost = (value) => {
+        props.onaddDialogs(value.profile)
     }
-    let OnPostChange = (e) => {
-        let text = e.target.value
 
-        props.onPostChange(text)
-    }
     return (
         <div>
             <div>
-                <textarea value={props.newPostText} placeholder='Enter your message'
-                          onChange={OnPostChange}></textarea>
-                <button onClick={addPost}>добавить</button>
-                <button>удалить</button>
+               <ProfileFormRedux onSubmit={addPost} />
             </div>
             {PostMass}
         </div>
     );
 }
+
+
+const ProfileForm=(props)=>{
+    const {handleSubmit}=props
+    return (
+        <form onSubmit={handleSubmit} >
+            <div>
+                <Field placeholder='Enter your message' name='profile'  component={renderField} type='text' validate={[ maxLength15, minLength2]} />
+            </div>
+            <button type="submit">Submit</button>
+
+        </form>
+    )
+}
 export default MyPost;
+let ProfileFormRedux = reduxForm({
+    // a unique name for the form
+    form: 'profileform'
+})(ProfileForm)

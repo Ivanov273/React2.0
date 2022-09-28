@@ -32,6 +32,16 @@ const instance = axios.create({
          return     instance.get(`auth/me`)
 
      },
+     apiLogin (email,password,rememberMe)  {
+
+         return     instance.post(`auth/login`,{email:email,password:password,rememberMe:true})
+
+     },
+     apiDeleteLogin ()  {
+
+         return     instance.delete(`auth/login`)
+
+     },
      apiProfileStatus(userid){
 
          return instance.get(`profile/status/${userid}`)

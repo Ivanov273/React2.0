@@ -12,12 +12,10 @@ let mapStateToProps = (state) => {
 }
 let mapDispatchToProps = (dispatch)=> {
     return {
-        onPostChange: (text)=> {
-                   dispatch(ActionCreatorUpdatePostText(text));
-                    },
-        onaddDialogs: ()=>{
 
-                dispatch(ActionCreatorAddPost());
+        onaddDialogs: (value)=>{
+
+                dispatch(ActionCreatorAddPost(value));
 
         }
     }

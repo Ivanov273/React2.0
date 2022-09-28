@@ -13,20 +13,41 @@ const reducerAuth = (state = initstate, action) => {
         case SETAUTH:
            return {
                ...state,
-               ...action.data,
-               isAuth : true
+               ...action.data
+
            }
         default:
             return state
     }
 }
-export const SetAuth = (id,login,email) => ({type: SETAUTH,data:{id,login,email}})
+export const SetAuth = (id,login,email,isAuth) => ({type: SETAUTH,data:{id,login,email,isAuth }})
 export const AuthThunk = (dispatch)=> {
     return (dispatch)=> {
         usersAPI.apiAuth().then(response => {
+            console.log(response.data)
             if (response.data.resultCode === 0) {
                 let {id,login,email} = response.data.data
-                dispatch(SetAuth(id,login,email))
+                dispatch(SetAuth(id,login,email,true))
+           }
+    })
+}
+}
+export const AuthThunkLogin = (email,password,rememberMe)=> {
+    return (dispatch)=> {
+        usersAPI.apiLogin(email,password,rememberMe).then(response => {
+            if (response.data.resultCode === 0) {
+
+
+                dispatch(AuthThunk())
+           }
+    })
+}
+}
+export const AuthThunkDeleteLogin = ()=> {
+    return (dispatch)=> {
+        usersAPI.apiDeleteLogin().then(response => {
+            if (response.data.resultCode === 0) {
+                dispatch(SetAuth(null,null,null,false))
            }
     })
 }
