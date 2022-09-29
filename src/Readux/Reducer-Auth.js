@@ -6,7 +6,7 @@ let initstate = {
     userid: '',
     login: '',
     email: '',
-    isAuth: false
+    isAuth: ''
 }
 const reducerAuth = (state = initstate, action) => {
     switch (action.type) {
@@ -24,7 +24,6 @@ export const SetAuth = (id,login,email,isAuth) => ({type: SETAUTH,data:{id,login
 export const AuthThunk = (dispatch)=> {
     return (dispatch)=> {
         usersAPI.apiAuth().then(response => {
-            console.log(response.data)
             if (response.data.resultCode === 0) {
                 let {id,login,email} = response.data.data
                 dispatch(SetAuth(id,login,email,true))
@@ -43,9 +42,10 @@ export const AuthThunkLogin = (email,password,rememberMe)=> {
     })
 }
 }
-export const AuthThunkDeleteLogin = ()=> {
+export const AuthThunkDeleteLogin = (dispatch)=> {
     return (dispatch)=> {
         usersAPI.apiDeleteLogin().then(response => {
+
             if (response.data.resultCode === 0) {
                 dispatch(SetAuth(null,null,null,false))
            }

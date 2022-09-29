@@ -1,16 +1,15 @@
 import React from 'react'
 import LoginFormRedux, {LoginForm} from "./LoginForm";
-import {AuthThunkDeleteLogin} from "../../Readux/Reducer-Auth";
+import {Navigate} from "react-router-dom";
+
 const Loginpage = (props)=>{
     const onSubmit = (formdata)=>{
        props.AuthThunkLogin(formdata.login,formdata.password,formdata.remember)
     }
-    const DeleteSubmit = ()=>{
-       props.AuthThunkDeleteLogin()
-    }
+    if(props.isAuth) return <Navigate to="/profile" />
     return <div>
         <h1>LOGIN</h1>
-        <LoginFormRedux AuthThunkLogin={props.AuthThunkLogin} DeleteSubmit={DeleteSubmit} onSubmit={onSubmit} />
+        <LoginFormRedux AuthThunkLogin={props.AuthThunkLogin}  onSubmit={onSubmit} />
     </div>
 }
 

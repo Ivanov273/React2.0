@@ -4,6 +4,7 @@ import {connect} from "react-redux";
 import {ProfileThunk, ProfileThunkStatus, UpdateProfileThunkStatus} from "../../Readux/Reducer-Profile";
 import {useParams} from "react-router-dom";
 import {compose} from "redux";
+import {WithAuthContainer} from "../../HOC/AuthHOC";
 
 
 const withRouter = WrappedComponent => props => {
@@ -44,7 +45,7 @@ let mapStateToProps = (state) => ({
 
 //const ProfileContainerwithRouter = withRouter(RedirectComponent)
 export default compose(connect(mapStateToProps, {ProfileThunk, ProfileThunkStatus, UpdateProfileThunkStatus}),
-    withRouter
+    withRouter,WithAuthContainer
 )(ProfileContainer)
 
 
