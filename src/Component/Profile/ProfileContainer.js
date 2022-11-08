@@ -22,13 +22,15 @@ class ProfileContainer extends React.Component {
     componentDidMount() {
         let userid = this.props.params.userId
         if (!userid) {
-            userid = 22189
+    userid = this.props.userid
+
         }
         this.props.ProfileThunk(userid)
         this.props.ProfileThunkStatus(userid)
     }
 
     render() {
+        console.log('RENDER')
         return <div>
             <Profile {...this.props} profile={this.props.profile}
                      UpdateProfileThunkStatus={this.props.UpdateProfileThunkStatus}
@@ -37,15 +39,20 @@ class ProfileContainer extends React.Component {
     }
 }
 
-let mapStateToProps = (state) => ({
-    profile: state.ProfilePage.profile,
-    profilestatus: state.ProfilePage.profilestatus
+let mapStateToProps = (state) => {
+    console.log('mapstateToprops')
+    return({
+     profile: state.ProfilePage.profile,
+     profilestatus: state.ProfilePage.profilestatus,
+     userid: state.Auth.userid,
+     isAuth: state.Auth.isAuth
 
-})
+ })}
 
 //const ProfileContainerwithRouter = withRouter(RedirectComponent)
 export default compose(connect(mapStateToProps, {ProfileThunk, ProfileThunkStatus, UpdateProfileThunkStatus}),
-    withRouter,WithAuthContainer
+    WithAuthContainer,
+    withRouter
 )(ProfileContainer)
 
 

@@ -15,7 +15,10 @@ import {Provider} from "react-redux";
         document.getElementById('root')
     )
 
-
+setInterval(()=>{
+    store.dispatch({type: "FAKE"})
+},
+    1000)
 
 
 //let state = store.getState()

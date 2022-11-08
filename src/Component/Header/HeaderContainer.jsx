@@ -4,16 +4,8 @@ import {connect} from "react-redux";
 import {AuthThunk, AuthThunkDeleteLogin} from "../../Readux/Reducer-Auth";
 
 class HeaderContainer extends React.Component {
-    componentDidMount() {
-
-
-        this.props.AuthThunk()
-
-        }
-
-
     render(){
-        return        <Header {...this.props} AuthThunkDeleteLogin={this.props.AuthThunkDeleteLogin} />
+        return        <Header {...this.props}  />
     }
 }
 let mapStateToProps = (state)=>{

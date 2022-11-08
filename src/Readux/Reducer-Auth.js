@@ -1,4 +1,5 @@
 import {usersAPI} from "../api/api";
+import {stopSubmit} from "redux-form";
 
 const SETAUTH = 'SETAUTH'
 
@@ -6,7 +7,7 @@ let initstate = {
     userid: '',
     login: '',
     email: '',
-    isAuth: ''
+    isAuth: 'false'
 }
 const reducerAuth = (state = initstate, action) => {
     switch (action.type) {
@@ -20,29 +21,29 @@ const reducerAuth = (state = initstate, action) => {
             return state
     }
 }
-export const SetAuth = (id,login,email,isAuth) => ({type: SETAUTH,data:{id,login,email,isAuth }})
-export const AuthThunk = (dispatch)=> {
-    return (dispatch)=> {
-        usersAPI.apiAuth().then(response => {
+export const SetAuth = ( userid,login,email,isAuth) => ({type: SETAUTH,data:{ userid,login,email,isAuth }})
+export const AuthThunk =()=>(dispatch)=> {
+
+      return  usersAPI.apiAuth().then(response => {
             if (response.data.resultCode === 0) {
                 let {id,login,email} = response.data.data
                 dispatch(SetAuth(id,login,email,true))
            }
     })
 }
-}
-export const AuthThunkLogin = (email,password,rememberMe)=> {
-    return (dispatch)=> {
+export const AuthThunkLogin = (email,password,rememberMe)=>(dispatch)=> {
         usersAPI.apiLogin(email,password,rememberMe).then(response => {
             if (response.data.resultCode === 0) {
-
-
                 dispatch(AuthThunk())
            }
+            else{
+                dispatch(stopSubmit('loginform',{_error: response.data.messages[0]}))
+
+            }
     })
 }
-}
 export const AuthThunkDeleteLogin = (dispatch)=> {
+
     return (dispatch)=> {
         usersAPI.apiDeleteLogin().then(response => {
 

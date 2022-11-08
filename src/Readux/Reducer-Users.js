@@ -13,12 +13,18 @@ let initstate = {
     PageSize: 10,
     currentPage: 1,
     isfetching: true,
-    isfetchingprogress: []
+    isfetchingprogress: [],
+    fake: 10
 }
 
 const reducerUsers = (state = initstate, action) => {
 
     switch (action.type) {
+        case "FAKE":
+            return{
+                ...state,
+                fake: state.fake+1
+            }
         case FOLLOW :
             return {
                 ...state,

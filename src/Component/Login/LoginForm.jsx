@@ -2,7 +2,7 @@ import React from "react";
 import {Field, reduxForm} from "redux-form";
 import {renderFieldLogin} from "../FormControls/FormsControl";
 import {email, maxLength15, minLength2} from "../../utils/validators";
-
+import s from "./LoginForm.module.css"
 const LoginForm=(props)=>{
     const {handleSubmit}=props
      return (
@@ -14,10 +14,10 @@ const LoginForm=(props)=>{
             <Field name='password' placeholder='password' component={renderFieldLogin} type='text' validate={[maxLength15,minLength2]}/>
         </div>
         <div>
-            <Field name='remember' component='input' type='checkbox' />
+            <Field label='remember me' name='remember' component='input' type='checkbox' description="Show the title of the item"  />Remember me
         </div>
             <button type="submit">Submit</button>
-            <button type="submit">Delete</button>
+           <div className={s.ErrorLoginForm}>{props.error ? props.error:''}</div>
     </form>
      )
 }

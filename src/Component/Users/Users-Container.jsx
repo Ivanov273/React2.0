@@ -6,6 +6,15 @@ import Preloader from "../Common/Preloader";
 import {Navigate} from "react-router-dom";
 import {WithAuthContainer} from "../../HOC/AuthHOC";
 import {compose} from "redux";
+import {
+    getAuth,
+    getcurrentPage,
+    getisfetching,
+    getisfetchingprogress,
+    getpagesize,
+    getTotalCount,
+    getUsers
+} from "../../Readux/users-selector";
 
 
 class UserContainer extends React.Component {
@@ -55,22 +64,24 @@ let mapStateToProps = (state) => ({
 })
 let mapStateToUsers = (state) => {
     return {
-        Users: state.usersPage.users,
-        TotalCount: state.usersPage.TotalCount,
-        pagesize: state.usersPage.PageSize,
-        currentPage: state.usersPage.currentPage,
-        isfetching: state.usersPage.isfetching,
-        isfetchingprogress: state.usersPage.isfetchingprogress,
-        Auth: state.Auth.isAuth
+        Users: getUsers(state),
+        TotalCount: getTotalCount(state),
+        pagesize: getpagesize(state),
+        currentPage: getcurrentPage(state),
+        isfetching: getisfetching(state),
+        isfetchingprogress: getisfetchingprogress(state),
+        Auth: getAuth(state)
     }
 }
 
-export default compose(connect(mapStateToUsers, {
+export default compose(
+    WithAuthContainer,
+    connect(mapStateToUsers, {
     getUsersThunkCreator,
     followUsersThunkCreator,
     unfollowUsersThunkCreator
-}),
-    WithAuthContainer
+})
+
 )(RedirectComponent)
 
 
