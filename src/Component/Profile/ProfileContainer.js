@@ -6,17 +6,15 @@ import {useParams} from "react-router-dom";
 import {compose} from "redux";
 import {WithAuthContainer} from "../../HOC/AuthHOC";
 
-
 const withRouter = WrappedComponent => props => {
-
     const params = useParams();
     return (
         <WrappedComponent
             {...props}
             params={params}
         />
-    );
-};
+    )
+}
 
 class ProfileContainer extends React.Component {
     componentDidMount() {
@@ -30,7 +28,7 @@ class ProfileContainer extends React.Component {
     }
 
     render() {
-        console.log('RENDER')
+
         return <div>
             <Profile {...this.props} profile={this.props.profile}
                      UpdateProfileThunkStatus={this.props.UpdateProfileThunkStatus}
@@ -40,7 +38,7 @@ class ProfileContainer extends React.Component {
 }
 
 let mapStateToProps = (state) => {
-    console.log('mapstateToprops')
+
     return({
      profile: state.ProfilePage.profile,
      profilestatus: state.ProfilePage.profilestatus,

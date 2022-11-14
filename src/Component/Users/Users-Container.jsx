@@ -13,7 +13,7 @@ import {
     getisfetchingprogress,
     getpagesize,
     getTotalCount,
-    getUsers
+    getUsers, getUsersSelectSuper
 } from "../../Readux/users-selector";
 
 
@@ -39,6 +39,7 @@ class UserContainer extends React.Component {
     }
 
     render() {
+        console.log('render')
         if(!this.props.Auth) return <Navigate to={"/login"} />
         return <>
             {
@@ -63,8 +64,10 @@ let mapStateToProps = (state) => ({
 
 })
 let mapStateToUsers = (state) => {
+    console.log('mapStateToProps')
     return {
-        Users: getUsers(state),
+        //Users: getUsers(state),
+        Users: getUsersSelectSuper(state),
         TotalCount: getTotalCount(state),
         pagesize: getpagesize(state),
         currentPage: getcurrentPage(state),
