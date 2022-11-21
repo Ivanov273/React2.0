@@ -5,7 +5,6 @@ import {maxLength15, minLength2,  required} from "../../../utils/validators";
 import {renderField} from "../../FormControls/FormsControl";
 window.props=[]
 const MyPost = React.memo((props) => {
-console.log('render')
     window.props.push(props)
     let PostMass = props.posts.map(p => <Post message={p.text} key={p.id} like={p.like}/>)
     let addPost = (value) => {

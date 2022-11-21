@@ -1,7 +1,7 @@
 import React from "react";
 import Loginpage from "./Login";
 import {connect} from "react-redux";
-import {AuthThunkDeleteLogin, AuthThunkLogin} from "../../Readux/Reducer-Auth";
+import {AuthThunkDeleteLogin, AuthThunkLogin} from "../../Redux/Reducer-Auth";
 
 class LoginContainer extends React.Component{
     render() {

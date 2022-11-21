@@ -1,5 +1,5 @@
 import React from 'react'
-import {ActionCreatorAddDialog, ActionCreatorUpdateDialogText} from "../../Readux/Reducer-Dialog";
+import {ActionCreatorAddDialog, ActionCreatorUpdateDialogText} from "../../Redux/Reducer-Dialog";
 import Dialogs from "./Dialogs";
 import {connect} from "react-redux";
 import {WithAuthContainer} from "../../HOC/AuthHOC";

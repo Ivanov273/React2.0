@@ -11,7 +11,7 @@ import HeaderContainer from "./Component/Header/HeaderContainer";
 import LoginContainer from "./Component/Login/LoginContainer";
 import {connect} from "react-redux";
 import {compose} from "redux";
-import {InitializeThunk} from "./Readux/Reducer-App";
+import {InitializeThunk} from "./Redux/Reducer-App";
 import Preloader from "./Component/Common/Preloader";
 
 const withRouter = WrappedComponent => props => {

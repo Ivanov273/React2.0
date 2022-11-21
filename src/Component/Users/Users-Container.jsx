@@ -1,6 +1,6 @@
 import React from 'react';
 import {connect} from 'react-redux';
-import {followUsersThunkCreator, getUsersThunkCreator, unfollowUsersThunkCreator} from '../../Readux/Reducer-Users';
+import {followUsersThunkCreator, getUsersThunkCreator, unfollowUsersThunkCreator} from '../../Redux/Reducer-Users';
 import Users from './Users';
 import Preloader from "../Common/Preloader";
 import {Navigate} from "react-router-dom";
@@ -14,7 +14,7 @@ import {
     getpagesize,
     getTotalCount,
     getUsers, getUsersSelectSuper
-} from "../../Readux/users-selector";
+} from "../../Redux/users-selector";
 
 
 class UserContainer extends React.Component {
