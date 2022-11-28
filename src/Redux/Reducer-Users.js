@@ -18,13 +18,7 @@ let initstate = {
 }
 
 const reducerUsers = (state = initstate, action) => {
-
     switch (action.type) {
-        case "FAKE":
-            return{
-                ...state,
-                fake: state.fake+1
-            }
         case FOLLOW :
             return {
                 ...state,
@@ -42,12 +36,9 @@ const reducerUsers = (state = initstate, action) => {
                     if (u.id === action.userid) {
 
                         return {...u, followed: false}
-
                     }
                     return u
-
                 })
-
             }
         case SETUSERS:
             return {
@@ -73,9 +64,7 @@ const reducerUsers = (state = initstate, action) => {
             }
         default:
             return state
-
     }
-
 }
 
 export const OnFollow = (userid) => ({type: FOLLOW, userid})
@@ -95,26 +84,24 @@ export const getUsersThunkCreator = (currentPage, pagesize) => {
         })
     }
 }
+const FollowUnfollowFlow = async (id, dispatch, ApiMethod, actionCreator) => {
+    dispatch(TogleProgressFetching(true, id))
+    let response = await ApiMethod
+    if (response.data.resultCode == 0) {
+        dispatch(actionCreator(id))
+    }
+    dispatch(TogleProgressFetching(false, id))
+}
 export const followUsersThunkCreator = (id) => {
-    return (dispatch) => {
-        dispatch(TogleProgressFetching(true, id))
-        usersAPI.getunFollowUsersApi(id).then(response => {
-            if (response.data.resultCode == 0) {
-                dispatch(UnFollow(id))
-            }
-            dispatch(TogleProgressFetching(false, id))
-        })
+    return async (dispatch) => {
+        let ApiMethod = usersAPI.getunFollowUsersApi(id)
+        FollowUnfollowFlow(id, dispatch, ApiMethod, UnFollow)
     }
 }
 export const unfollowUsersThunkCreator = (id) => {
-    return (dispatch) => {
-        dispatch(TogleProgressFetching(true, id))
-        usersAPI.getFollowUsersApi(id).then(response => {
-            if (response.data.resultCode == 0) {
-                dispatch(OnFollow(id))
-            }
-            dispatch(TogleProgressFetching(false, id))
-        })
+    return async (dispatch) => {
+        let ApiMethod = usersAPI.getFollowUsersApi(id)
+        FollowUnfollowFlow(id, dispatch, ApiMethod, OnFollow)
     }
 }
 export default reducerUsers

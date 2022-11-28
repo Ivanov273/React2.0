@@ -38,10 +38,10 @@ const reducerProfile = (state = initstate, action) => {
                 ...state,
                 profile: action.usersprofile
             }
-            case     DELETE_POST:
+        case     DELETE_POST:
             return {
                 ...state,
-                PostData: state.PostData.filter(p=> p.id != action.idposts)
+                PostData: state.PostData.filter(p => p.id != action.idposts)
             }
         case     EDIT_STATUS:
             return {
@@ -53,33 +53,28 @@ const reducerProfile = (state = initstate, action) => {
             return state
     }
 }
-export const ActionCreatorAddPost = (newtext) => ({type: ADD_POST,newPostText: newtext})
-export const ActionDeletePost = (idposts) => ({type: DELETE_POST,idposts})
+export const ActionCreatorAddPost = (newtext) => ({type: ADD_POST, newPostText: newtext})
+export const ActionDeletePost = (idposts) => ({type: DELETE_POST, idposts})
 export const ActionCreatorEditStatust = (newprofilestatus) => ({type: EDIT_STATUS, newprofilestatus: newprofilestatus})
 export const SetUsersProfile = (usersprofile) => ({type: SET_USERS_PROFILE, usersprofile})
 export const ProfileThunk = (userid) => {
-    return (dispatch) => {
-        usersAPI.getProfile(userid).then(response => {
-
-            dispatch(SetUsersProfile(response.data))
-        })
+    return async (dispatch) => {
+        let response = await usersAPI.getProfile(userid)
+        dispatch(SetUsersProfile(response.data))
     }
 }
 export const ProfileThunkStatus = (userid) => {
-    return (dispatch) => {
-        usersAPI.apiProfileStatus(userid).then(response => {
-            dispatch(ActionCreatorEditStatust(response.data))
-
-        })
+    return async (dispatch) => {
+        let response = await usersAPI.apiProfileStatus(userid)
+        dispatch(ActionCreatorEditStatust(response.data))
     }
 }
 export const UpdateProfileThunkStatus = (status) => {
-    return (dispatch) => {
-        usersAPI.apiUpdateProfileStatus(status).then(response => {
-            if (response.data.resultCode === 0) {
-                dispatch(ActionCreatorEditStatust(status))
-            }
-        })
+    return async (dispatch) => {
+        let response = await usersAPI.apiUpdateProfileStatus(status)
+        if (response.data.resultCode === 0) {
+            dispatch(ActionCreatorEditStatust(status))
+        }
     }
 }
 

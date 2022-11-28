@@ -13,33 +13,20 @@ import {
     getisfetchingprogress,
     getpagesize,
     getTotalCount,
-    getUsers, getUsersSelectSuper
+    getUsersSelectSuper
 } from "../../Redux/users-selector";
 
 
 class UserContainer extends React.Component {
 
-
     componentDidMount() {
-
         this.props.getUsersThunkCreator(this.props.currentPage, this.props.pagesize)
-
-        /*
-                this.props.Togle(true)
-                usersAPI.getUsersApi(this.props.currentPage,this.props.pagesize).then(data => {
-
-                    this.props.SetUsers(data.items)
-                    this.props.Togle(false)
-                })
-        */
     }
-
     SetUserPage = (p) => {
         this.props.getUsersThunkCreator(p, this.props.pagesize)
     }
 
     render() {
-        console.log('render')
         if(!this.props.Auth) return <Navigate to={"/login"} />
         return <>
             {
@@ -64,9 +51,7 @@ let mapStateToProps = (state) => ({
 
 })
 let mapStateToUsers = (state) => {
-    console.log('mapStateToProps')
     return {
-        //Users: getUsers(state),
         Users: getUsersSelectSuper(state),
         TotalCount: getTotalCount(state),
         pagesize: getpagesize(state),

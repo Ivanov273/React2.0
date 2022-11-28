@@ -34,7 +34,6 @@ class App extends React.Component {
             return <Preloader />
         }
         return (
-
             <div className="wrapper">
                 <HeaderContainer/>
                 <Navbar/>

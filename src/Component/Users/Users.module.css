@@ -62,9 +62,7 @@
     grid-area: foor;
     margin-left: 10px;
 }
-.active{
-    font-weight: bold;
-}
+
 .loader{
     position: absolute;
     z-index: 2;

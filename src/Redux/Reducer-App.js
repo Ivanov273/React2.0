@@ -1,5 +1,3 @@
-import {usersAPI} from "../api/api";
-import {stopSubmit} from "redux-form";
 import {AuthThunk} from "./Reducer-Auth";
 
 const SET_INITIALIZE = 'SET_INITIALIZE'
