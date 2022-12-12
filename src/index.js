@@ -5,21 +5,18 @@ import App from './App';
 import store from './Redux/redux-store'
 import {BrowserRouter} from "react-router-dom";
 import {Provider} from "react-redux";
+import SamuraiApp from "./App";
     ReactDOM.render(
-        <BrowserRouter>
-            <Provider store={store}>
-                <App/>
-            </Provider>
-        </BrowserRouter>,
+        <SamuraiApp />,
         document.getElementById('root')
     )
-
+/*
 setInterval(()=>{
     store.dispatch({type: "FAKE"})
 },
     1000)
 
-
+*/
 //let state = store.getState()
 //store.setState(render)
 //store.setState(rerenderState)

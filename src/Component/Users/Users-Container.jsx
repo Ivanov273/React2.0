@@ -11,7 +11,7 @@ import {
     getcurrentPage,
     getisfetching,
     getisfetchingprogress,
-    getpagesize,
+    getpagesize, getportionsize,
     getTotalCount,
     getUsersSelectSuper
 } from "../../Redux/users-selector";
@@ -36,6 +36,8 @@ class UserContainer extends React.Component {
             <Users SetUserPage={this.SetUserPage}
                    currentPage={this.props.currentPage}
                    Users={this.props.Users}
+                   pagesize={this.props.pagesize}
+                   portionsize={this.props.portionsize}
                    TotalCount={this.props.TotalCount}
                    isfetchingprogress={this.props.isfetchingprogress}
                    followUsersThunkCreator={this.props.followUsersThunkCreator}
@@ -55,6 +57,7 @@ let mapStateToUsers = (state) => {
         Users: getUsersSelectSuper(state),
         TotalCount: getTotalCount(state),
         pagesize: getpagesize(state),
+        portionsize: getportionsize(state),
         currentPage: getcurrentPage(state),
         isfetching: getisfetching(state),
         isfetchingprogress: getisfetchingprogress(state),

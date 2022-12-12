@@ -1,6 +1,6 @@
 import React, {useEffect, useState} from 'react';
 
- const ProfileStratus =(props)=> {
+ const ProfileStatus =(props)=> {
 let  [editmode,Seteditmode]= useState(false)
 let  [status,Setstatus]= useState(props.profilestatus)
      const activatedStatusMode = () => {
@@ -25,4 +25,4 @@ let  [status,Setstatus]= useState(props.profilestatus)
 
         </div>
 }
-export default ProfileStratus
+export default ProfileStatus

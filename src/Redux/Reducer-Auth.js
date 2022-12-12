@@ -1,6 +1,5 @@
 import {usersAPI} from "../api/api";
 import {stopSubmit} from "redux-form";
-import {SetUsersProfile} from "./Reducer-Profile";
 
 const SETAUTH = 'SETAUTH'
 

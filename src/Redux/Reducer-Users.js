@@ -1,4 +1,5 @@
 import {usersAPI} from "../api/api";
+import actions from "redux-form/lib/actions";
 
 const FOLLOW = 'FOLLOW'
 const UNFOLLOW = 'UNFOLLOW'
@@ -10,7 +11,8 @@ const TOGLE_PROGRESS = 'TOGLE_PROGRESS'
 let initstate = {
     users: [],
     TotalCount: 50,
-    PageSize: 10,
+    pagesize: 10,
+    portionsize: 10,
     currentPage: 1,
     isfetching: true,
     isfetchingprogress: [],
@@ -43,7 +45,8 @@ const reducerUsers = (state = initstate, action) => {
         case SETUSERS:
             return {
                 ...state,
-                users: [...action.users]
+                users: [...action.users],
+                TotalCount: action.totalCount
             }
         case SETPAGE:
             return {
@@ -69,7 +72,7 @@ const reducerUsers = (state = initstate, action) => {
 
 export const OnFollow = (userid) => ({type: FOLLOW, userid})
 export const UnFollow = (userid) => ({type: UNFOLLOW, userid})
-export const SetUsers = (users) => ({type: SETUSERS, users})
+export const SetUsers = (users,totalCount) => ({type: SETUSERS, users,totalCount})
 export const SetPage = (page) => ({type: SETPAGE, page})
 export const Togle = (fetching) => ({type: TOGLE, fetching})
 export const TogleProgressFetching = (isfetching, id) => ({type: TOGLE_PROGRESS, isfetching, id})
@@ -78,7 +81,7 @@ export const getUsersThunkCreator = (currentPage, pagesize) => {
     return (dispatch) => {
         dispatch(Togle(true))
         usersAPI.getUsersApi(currentPage, pagesize).then(data => {
-            dispatch(SetUsers(data.items))
+            dispatch(SetUsers(data.items,data.totalCount))
             dispatch(SetPage(currentPage))
             dispatch(Togle(false))
         })

@@ -1,6 +1,6 @@
 import React from 'react';
 
-export default class ProfileStratus extends React.Component {
+export default class ProfileStatus extends React.Component {
 
     state = {
         status: this.props.profilestatus,

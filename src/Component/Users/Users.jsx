@@ -4,7 +4,7 @@ import User from "./User";
 
 let Users = (props) => {
     return <div>
-        <Paginator TotalCount={props.TotalCount} SetUserPage={props.SetUserPage} currentPage={props.currentPage}
+        <Paginator TotalCount={props.TotalCount} SetUserPage={props.SetUserPage} currentPage={props.currentPage} portionsize={props.portionsize}
                    pagesize={props.pagesize}/>
         {
             props.Users.map(u => <User key={u.id}
