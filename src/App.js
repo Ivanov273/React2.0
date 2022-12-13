@@ -1,4 +1,4 @@
-import React,{Suspense} from 'react';
+import React, {Suspense} from 'react';
 import {BrowserRouter, Route, Routes, useParams} from "react-router-dom";
 import './App.css';
 import Navbar from "./Component/Navbar/Navbar";
@@ -14,6 +14,7 @@ import {compose} from "redux";
 import {InitializeThunk} from "./Redux/Reducer-App";
 import Preloader from "./Component/Common/Preloader";
 import store from "./Redux/redux-store";
+
 const DialogsContainer = React.lazy(() => import('./Component/Dialogs/DialogsContainer'));
 const ProfileContainer = React.lazy(() => import('./Component/Profile/ProfileContainer'));
 const withRouter = WrappedComponent => props => {
@@ -26,48 +27,53 @@ const withRouter = WrappedComponent => props => {
         />
     );
 };
+
 class App extends React.Component {
     componentDidMount() {
         this.props.InitializeThunk()
     }
+
     render() {
-        if(!this.props.initialize)
-        {
-            return <Preloader />
+        if (!this.props.initialize) {
+            return <Preloader/>
         }
         return (
+
             <div className="wrapper">
                 <HeaderContainer/>
                 <Navbar/>
                 <div className={"contain"}>
-                    <Routes>
-                        <Route path="/profile" element={<Suspense fallback={<div>Loading...</div>}>
-                            <ProfileContainer/></Suspense>  }>
-                            <Route path=":userId" element={<ProfileContainer/>}/>
-                        </Route>
-                        <Route path='/dialogs' element={<Suspense fallback={<div>Loading...</div>}>
-                            <DialogsContainer/></Suspense>                            }/>
-                        <Route path='/users' element={<MyUsersContainer/>}/>
-                        <Route path='/news' element={<News/>}/>
-                        <Route path='/music' element={<Music/>}/>
-                        <Route path='/login' element={<LoginContainer/>}/>
-                    </Routes>
+                    <Suspense fallback={<div><Preloader/></div>}>
+                        <Routes>
+                            <Route path="/profile" element={<ProfileContainer/>}>
+                                <Route path=":userId" element={<ProfileContainer/>}/>
+                            </Route>
+                            <Route path='/dialogs' element={<DialogsContainer/>}/>
+                            <Route path='/users' element={<MyUsersContainer/>}/>
+                            <Route path='/news' element={<News/>}/>
+                            <Route path='/music' element={<Music/>}/>
+                            <Route path='/login' element={<LoginContainer/>}/>
+                        </Routes>
+                    </Suspense>
                 </div>
             </div>
+
+
         );
     }
 }
-let mapStateToprops=(state)=>({
+
+let mapStateToprops = (state) => ({
     initialize: state.app.initialize,
     isAuth: state.Auth.isAuth
 })
-const AppContainer = compose (
+const AppContainer = compose(
     withRouter,
-connect (mapStateToprops,{InitializeThunk}))(App)
-const SamuraiApp=(props)=>{
-   return <BrowserRouter>
+    connect(mapStateToprops, {InitializeThunk}))(App)
+const SamuraiApp = (props) => {
+    return <BrowserRouter>
         <Provider store={store}>
-            <AppContainer />
+            <AppContainer/>
         </Provider>
     </BrowserRouter>
 }
