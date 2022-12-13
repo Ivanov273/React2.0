@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/React2.0/static/css/main.895e10dd.css",
-    "main.js": "/React2.0/static/js/main.f6f74ce9.js",
+    "main.js": "/React2.0/static/js/main.79991691.js",
     "static/css/740.dca9becb.chunk.css": "/React2.0/static/css/740.dca9becb.chunk.css",
     "static/js/740.c60293aa.chunk.js": "/React2.0/static/js/740.c60293aa.chunk.js",
     "static/css/215.3a1ef3bd.chunk.css": "/React2.0/static/css/215.3a1ef3bd.chunk.css",
@@ -10,7 +10,7 @@
     "static/media/rik.jpg": "/React2.0/static/media/rik.cef4e3e95fe8b7e0c337.jpg",
     "index.html": "/React2.0/index.html",
     "main.895e10dd.css.map": "/React2.0/static/css/main.895e10dd.css.map",
-    "main.f6f74ce9.js.map": "/React2.0/static/js/main.f6f74ce9.js.map",
+    "main.79991691.js.map": "/React2.0/static/js/main.79991691.js.map",
     "740.dca9becb.chunk.css.map": "/React2.0/static/css/740.dca9becb.chunk.css.map",
     "740.c60293aa.chunk.js.map": "/React2.0/static/js/740.c60293aa.chunk.js.map",
     "215.3a1ef3bd.chunk.css.map": "/React2.0/static/css/215.3a1ef3bd.chunk.css.map",
@@ -18,6 +18,6 @@
   },
   "entrypoints": [
     "static/css/main.895e10dd.css",
-    "static/js/main.f6f74ce9.js"
+    "static/js/main.79991691.js"
   ]
 }
