@@ -1,23 +1,23 @@
 {
   "files": {
-    "main.css": "/React2.0/static/css/main.895e10dd.css",
-    "main.js": "/React2.0/static/js/main.79991691.js",
-    "static/css/740.dca9becb.chunk.css": "/React2.0/static/css/740.dca9becb.chunk.css",
-    "static/js/740.c60293aa.chunk.js": "/React2.0/static/js/740.c60293aa.chunk.js",
-    "static/css/215.3a1ef3bd.chunk.css": "/React2.0/static/css/215.3a1ef3bd.chunk.css",
-    "static/js/215.5bb8c08c.chunk.js": "/React2.0/static/js/215.5bb8c08c.chunk.js",
-    "static/media/loader2.gif": "/React2.0/static/media/loader2.d8baec1624c5850bb857.gif",
-    "static/media/rik.jpg": "/React2.0/static/media/rik.cef4e3e95fe8b7e0c337.jpg",
-    "index.html": "/React2.0/index.html",
-    "main.895e10dd.css.map": "/React2.0/static/css/main.895e10dd.css.map",
-    "main.79991691.js.map": "/React2.0/static/js/main.79991691.js.map",
-    "740.dca9becb.chunk.css.map": "/React2.0/static/css/740.dca9becb.chunk.css.map",
-    "740.c60293aa.chunk.js.map": "/React2.0/static/js/740.c60293aa.chunk.js.map",
-    "215.3a1ef3bd.chunk.css.map": "/React2.0/static/css/215.3a1ef3bd.chunk.css.map",
-    "215.5bb8c08c.chunk.js.map": "/React2.0/static/js/215.5bb8c08c.chunk.js.map"
+    "main.css": "/react-samurai/static/css/main.895e10dd.css",
+    "main.js": "/react-samurai/static/js/main.be0dc4af.js",
+    "static/css/740.dca9becb.chunk.css": "/react-samurai/static/css/740.dca9becb.chunk.css",
+    "static/js/740.c60293aa.chunk.js": "/react-samurai/static/js/740.c60293aa.chunk.js",
+    "static/css/215.3a1ef3bd.chunk.css": "/react-samurai/static/css/215.3a1ef3bd.chunk.css",
+    "static/js/215.5bb8c08c.chunk.js": "/react-samurai/static/js/215.5bb8c08c.chunk.js",
+    "static/media/loader2.gif": "/react-samurai/static/media/loader2.d8baec1624c5850bb857.gif",
+    "static/media/rik.jpg": "/react-samurai/static/media/rik.cef4e3e95fe8b7e0c337.jpg",
+    "index.html": "/react-samurai/index.html",
+    "main.895e10dd.css.map": "/react-samurai/static/css/main.895e10dd.css.map",
+    "main.be0dc4af.js.map": "/react-samurai/static/js/main.be0dc4af.js.map",
+    "740.dca9becb.chunk.css.map": "/react-samurai/static/css/740.dca9becb.chunk.css.map",
+    "740.c60293aa.chunk.js.map": "/react-samurai/static/js/740.c60293aa.chunk.js.map",
+    "215.3a1ef3bd.chunk.css.map": "/react-samurai/static/css/215.3a1ef3bd.chunk.css.map",
+    "215.5bb8c08c.chunk.js.map": "/react-samurai/static/js/215.5bb8c08c.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.895e10dd.css",
-    "static/js/main.79991691.js"
+    "static/js/main.be0dc4af.js"
   ]
 }
