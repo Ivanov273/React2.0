@@ -6,6 +6,8 @@
   <component name="ChangeListManager">
     <list default="true" id="f2301f02-2065-47af-bac9-86d4fe362600" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -88,32 +90,24 @@
       </test-names>
       <method v="2" />
     </configuration>
-    <configuration name="Profile Component.input to be null" type="JavaScriptTestRunnerJest" temporary="true" nameIsGenerated="true">
+    <configuration name="build" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="build" />
+      </scripts>
       <node-interpreter value="project" />
-      <node-options value="" />
-      <jest-package value="$PROJECT_DIR$/node_modules/react-scripts" />
-      <working-dir value="$PROJECT_DIR$" />
       <envs />
-      <scope-kind value="TEST" />
-      <test-file value="$PROJECT_DIR$/src/Component/Profile/PofileInfo/ProfileStatus.test.jsx" />
-      <test-names>
-        <test-name value="Profile Component" />
-        <test-name value="input to be null" />
-      </test-names>
       <method v="2" />
     </configuration>
-    <configuration name="Profile Component.span inner" type="JavaScriptTestRunnerJest" temporary="true" nameIsGenerated="true">
+    <configuration name="deploy" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="deploy" />
+      </scripts>
       <node-interpreter value="project" />
-      <node-options value="" />
-      <jest-package value="$PROJECT_DIR$/node_modules/react-scripts" />
-      <working-dir value="$PROJECT_DIR$" />
       <envs />
-      <scope-kind value="TEST" />
-      <test-file value="$PROJECT_DIR$/src/Component/Profile/PofileInfo/ProfileStatus.test.jsx" />
-      <test-names>
-        <test-name value="Profile Component" />
-        <test-name value="span inner" />
-      </test-names>
       <method v="2" />
     </configuration>
     <configuration name="start" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
@@ -128,11 +122,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="npm.deploy" />
         <item itemvalue="npm.start" />
+        <item itemvalue="npm.build" />
         <item itemvalue="Jest.Profile Component.callback should be called" />
         <item itemvalue="Jest.Profile Component.input should be disabled in editMode insted of span" />
-        <item itemvalue="Jest.Profile Component.input to be null" />
-        <item itemvalue="Jest.Profile Component.span inner" />
       </list>
     </recent_temporary>
   </component>
@@ -151,7 +145,7 @@
       <workItem from="1670317469197" duration="10175000" />
       <workItem from="1670420396787" duration="7238000" />
       <workItem from="1670867934744" duration="3814000" />
-      <workItem from="1670912988809" duration="959000" />
+      <workItem from="1670912988809" duration="14148000" />
     </task>
     <servers />
   </component>

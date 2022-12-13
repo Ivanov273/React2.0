@@ -1,5 +1,5 @@
 import React, {Suspense} from 'react';
-import {BrowserRouter, Route, Routes, useParams} from "react-router-dom";
+import {BrowserRouter, HashRouter, Route, Routes, useParams} from "react-router-dom";
 import './App.css';
 import Navbar from "./Component/Navbar/Navbar";
 import News from "./Component/News/News";
@@ -71,10 +71,10 @@ const AppContainer = compose(
     withRouter,
     connect(mapStateToprops, {InitializeThunk}))(App)
 const SamuraiApp = (props) => {
-    return <BrowserRouter>
+    return <HashRouter >
         <Provider store={store}>
             <AppContainer/>
         </Provider>
-    </BrowserRouter>
+    </HashRouter>
 }
 export default SamuraiApp
