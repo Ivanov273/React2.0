@@ -1,4 +1,5 @@
 import React from 'react';
+import {UpdateProfileThunkStatus} from "../../../Redux/Reducer-Profile";
 
 export default class ProfileStatus extends React.Component {
 
@@ -33,7 +34,7 @@ export default class ProfileStatus extends React.Component {
 
     render() {
         return <div>
-            {!this.state.editmode && <div><span
+            {!this.state.editmode && <div><b>Статус - </b><span
                 onClick={this.activatedStatusMode}>{this.state.status || '--------'}</span>
             </div>}
             {this.state.editmode &&

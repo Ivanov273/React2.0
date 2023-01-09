@@ -1,30 +1,72 @@
-import React from 'react';
+import React, {useState} from 'react';
 import s from './ProfileInfo.module.css'
 import userPhoto from "../../../img/rik.jpg";
 import Preloader from "../../Common/Preloader";
 import ProfileStratus from "./ProfileStatus";
+import ProfileEdit from "./ProfileEdit";
+import ProfileFormRedux from "./ProfileEdit";
+import {UpdateDataToProfile} from "../../../Redux/Reducer-Profile";
 
-const ProfileInfo = (props) => {
-    if (!props.profile) {
+const ProfileInfo = ({
+                         profile,
+                         ProfileThunksavePhoto,
+                         isowner,
+                         profilestatus,
+                         UpdateProfileThunkStatus,UpdateDataToProfile
+                     }) => {
+    let [editmode, Seteditmode] = useState(true)
+    if (!profile) {
         return <Preloader/>
     }
-
+    const onMainPhoto = (e) => {
+        ProfileThunksavePhoto(e.target.files[0])
+    }
+    const onSubmit= (formData)=>{
+         UpdateDataToProfile(formData).then(()=>{
+             Seteditmode(true)
+         })
+    }
     return <div>
 
         <div>
             <img className={s.userImage}
-                 src={props.profile.photos.large != null ? props.profile.photos.small : userPhoto}/>
-            <ProfileStratus {...props} profilestatus={props.profilestatus}/>
+                 src={profile.photos.large != null ? profile.photos.small : userPhoto}/>
+            {isowner && <input type={"file"} onChange={onMainPhoto}/>}
         </div>
-
-        <div>
-            {props.profile.fullName}
-        </div>
-        <div>
-            {props.profile.userId}
-        </div>
-
-
+        {editmode
+            ? <ProfileleData  profile={profile} editToProfile={() => {Seteditmode(false)}}/>
+            : <ProfileFormRedux initialValues={profile}  onSubmit={onSubmit} profile={profile}/>}
+        <ProfileStratus UpdateProfileThunkStatus={UpdateProfileThunkStatus} profilestatus={profilestatus}/>
     </div>
 }
+const Contact = ({contactTitle, contactValue}) => {
+    return <div><b>{contactTitle}</b>:{contactValue}</div>
+}
+const ProfileleData = ({profile, editToProfile}) => {
+    return <div>
+        <button onClick={editToProfile}>Edit</button>
+        <div>
+            <b>Полное имя - </b>{profile.fullName}
+        </div>
+        <div>
+            <b>ID - </b>{profile.userId}
+        </div>
+        <div>
+            <b>Ищу рабоу -</b>{profile.lookingForAJob ? <b>да</b> : <b>нет</b>}
+        </div>
+        <div>
+            <b>aboutMe -</b>{profile.aboutMe ? profile.aboutMe : <b>нет</b>}
+        </div>
+        <div>
+            <b>My professional skils -</b>{profile.lookingForAJobDescription }
+        </div>
+        <div>
+            <b>Контакты :</b>{Object.keys(profile.contacts).map(key => {
+            return <Contact key={key} contactTitle={key} contactValue={profile.contacts[key]}/>
+        })}
+        </div>
+    </div>
+
+}
+
 export default ProfileInfo;

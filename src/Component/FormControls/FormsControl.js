@@ -22,6 +22,13 @@ export const renderFieldDialog = (props) => {
 export const renderFieldLogin = (props) => {
     return <FormControls {...props}><input {...props.input} {...props}  /> </FormControls>
 }
+export const renderFieldProfile = (props) => {
+    return <FormControls {...props}><textarea {...props.input} {...props}  /></FormControls>
+}
+export const renderFieldProfileInput = (props) => {
+    return <FormControls {...props}><input {...props.input} {...props}  /></FormControls>
+}
+
 
 
 

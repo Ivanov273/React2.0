@@ -26,7 +26,7 @@ const MyPost = React.memo((props) => {
 const ProfileForm=(props)=>{
     const {handleSubmit}=props
     return (
-        <form onSubmit={handleSubmit} >
+        <form onSubmit={handleSubmit} ><p><b>Мои посты</b></p>
             <div>
                 <Field placeholder='Enter your message' name='profile'  component={renderField} type='text' validate={[ maxLength15, minLength2]} />
             </div>

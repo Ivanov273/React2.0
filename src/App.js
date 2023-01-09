@@ -17,16 +17,7 @@ import store from "./Redux/redux-store";
 
 const DialogsContainer = React.lazy(() => import('./Component/Dialogs/DialogsContainer'));
 const ProfileContainer = React.lazy(() => import('./Component/Profile/ProfileContainer'));
-const withRouter = WrappedComponent => props => {
 
-    const params = useParams();
-    return (
-        <WrappedComponent
-            {...props}
-            params={params}
-        />
-    );
-};
 
 class App extends React.Component {
     componentDidMount() {
@@ -68,7 +59,7 @@ let mapStateToprops = (state) => ({
     isAuth: state.Auth.isAuth
 })
 const AppContainer = compose(
-    withRouter,
+
     connect(mapStateToprops, {InitializeThunk}))(App)
 const SamuraiApp = (props) => {
     return <HashRouter >

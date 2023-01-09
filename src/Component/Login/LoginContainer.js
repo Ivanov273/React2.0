@@ -5,7 +5,6 @@ import {AuthThunkDeleteLogin, AuthThunkLogin} from "../../Redux/Reducer-Auth";
 
 class LoginContainer extends React.Component{
     render() {
-        ///if(props.Auth) return alert(props.isAuth)
         return <Loginpage isAuth={this.props.isAuth} AuthThunkLogin={this.props.AuthThunkLogin} />
     }
 }

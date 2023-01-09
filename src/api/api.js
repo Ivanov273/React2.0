@@ -43,13 +43,25 @@ const instance = axios.create({
 
      },
      apiProfileStatus(userid){
-
          return instance.get(`profile/status/${userid}`)
      },
      apiUpdateProfileStatus(status){
 
-         return instance.put(`profile/status/`,{status:status})
-     }
+         return instance.put(`profile/status/`,{status: status})
+     },
+     apiUpdateDataToProfile(data){
+
+         return instance.put(`profile`,data)
+     },
+     savePhoto(photofile){
+         const formData = new FormData()
+         formData.append("image", photofile)
+         return instance.put(`profile/photo/`,formData, {
+             headers: {
+                 'Content-Type': 'multipart/form-data'
+             }
+         })
+ }
  }
 /*axios.get(`https://social-network.samuraijs.com/api/1.0/auth/me`,{
             withCredentials: true
