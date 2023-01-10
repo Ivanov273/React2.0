@@ -32,9 +32,9 @@ const instance = axios.create({
          return     instance.get(`auth/me`)
 
      },
-     apiLogin (email,password,rememberMe)  {
+     apiLogin (email,password,rememberMe,captcha)  {
 
-         return     instance.post(`auth/login`,{email:email,password:password,rememberMe:true})
+         return     instance.post(`auth/login`,{email:email,password:password,rememberMe:true,captcha:captcha})
 
      },
      apiDeleteLogin ()  {
@@ -50,8 +50,10 @@ const instance = axios.create({
          return instance.put(`profile/status/`,{status: status})
      },
      apiUpdateDataToProfile(data){
-
          return instance.put(`profile`,data)
+     },
+     apiCaptcha(){
+         return instance.get(`security/get-captcha-url`)
      },
      savePhoto(photofile){
          const formData = new FormData()

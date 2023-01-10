@@ -5,17 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f2301f02-2065-47af-bac9-86d4fe362600" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/Component/Profile/PofileInfo/ProfileEdit.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Component/FormControls/FormsControl.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Component/FormControls/FormsControl.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Component/Login/Login.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Component/Login/Login.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Component/Login/LoginContainer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Component/Login/LoginContainer.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Component/Profile/MyPosts/MyPost.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Component/Profile/MyPosts/MyPost.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Component/Profile/PofileInfo/ProfileInfo.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Component/Profile/PofileInfo/ProfileInfo.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Component/Profile/PofileInfo/ProfileStatus.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Component/Profile/PofileInfo/ProfileStatus.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Component/Profile/Profile.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Component/Profile/Profile.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Component/Profile/ProfileContainer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Component/Profile/ProfileContainer.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Redux/Reducer-Profile.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Redux/Reducer-Profile.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Component/Login/LoginForm.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Component/Login/LoginForm.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Redux/Reducer-Auth.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Redux/Reducer-Auth.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/api/api.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/api/api.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -155,7 +149,8 @@
       <workItem from="1672933031225" duration="3607000" />
       <workItem from="1673007299170" duration="2717000" />
       <workItem from="1673179189748" duration="2550000" />
-      <workItem from="1673236995892" duration="7383000" />
+      <workItem from="1673236995892" duration="8691000" />
+      <workItem from="1673345760095" duration="5087000" />
     </task>
     <servers />
   </component>

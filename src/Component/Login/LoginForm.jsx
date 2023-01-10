@@ -16,6 +16,11 @@ const LoginForm=(props)=>{
         <div>
             <Field label='remember me' name='remember' component='input' type='checkbox' description="Show the title of the item"  />Remember me
         </div>
+            {props.dataurl && <img src={props.dataurl} alt=""/>}
+            {props.dataurl && <div>
+                <Field  name='captcha' component='input'    />
+            </div>}
+
             <button type="submit">Submit</button>
            <div className={s.ErrorLoginForm}>{props.error ? props.error:''}</div>
     </form>
