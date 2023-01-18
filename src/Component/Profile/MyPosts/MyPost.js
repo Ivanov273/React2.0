@@ -3,6 +3,7 @@ import Post from "./Post/Post";
 import {Field, reduxForm} from "redux-form";
 import {maxLength15, minLength2,  required} from "../../../utils/validators";
 import {renderField} from "../../FormControls/FormsControl";
+import s from  '../../Profile/PofileInfo/ProfileInfo.module.css'
 window.props=[]
 const MyPost = React.memo((props) => {
     window.props.push(props)
@@ -30,7 +31,7 @@ const ProfileForm=(props)=>{
             <div>
                 <Field placeholder='Enter your message' name='profile'  component={renderField} type='text' validate={[ maxLength15, minLength2]} />
             </div>
-            <button type="submit">Submit</button>
+            <button className={s.button} type="submit">Отправить</button>
 
         </form>
     )

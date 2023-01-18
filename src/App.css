@@ -12,7 +12,8 @@ ul li  {
 
 .contain{
   grid-area: main_cont;
-  margin-left: 10px;
-  background-color: lightgreen;
+  padding-left: 20px;
+  background-color: #dbcca1;
+min-height: 100vh;
 }
 

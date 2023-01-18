@@ -18,6 +18,7 @@ const ProfileInfo = ({
     if (!profile) {
         return <Preloader/>
     }
+
     const onMainPhoto = (e) => {
         ProfileThunksavePhoto(e.target.files[0])
     }
@@ -31,7 +32,7 @@ const ProfileInfo = ({
         <div>
             <img className={s.userImage}
                  src={profile.photos.large != null ? profile.photos.small : userPhoto}/>
-            {isowner && <input type={"file"} onChange={onMainPhoto}/>}
+            {isowner && <input  type={"file"} onChange={onMainPhoto}/>}
         </div>
         {editmode
             ? <ProfileleData  profile={profile} editToProfile={() => {Seteditmode(false)}}/>
@@ -44,7 +45,7 @@ const Contact = ({contactTitle, contactValue}) => {
 }
 const ProfileleData = ({profile, editToProfile}) => {
     return <div>
-        <button onClick={editToProfile}>Edit</button>
+        <button className={s.edit+' '+ s.button} onClick={editToProfile}>Редактировать</button>
         <div>
             <b>Полное имя - </b>{profile.fullName}
         </div>

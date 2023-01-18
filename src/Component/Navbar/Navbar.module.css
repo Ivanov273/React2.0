@@ -1,10 +1,9 @@
 .mainNav{
-    margin-top: 200px;
+    margin: 200px 0 0200px 0;
 }
 .main{
     grid-area: left_men;
-    background-color: darkgoldenrod;
-    height: 100vh;
+    background-color: #263f48;
     display: grid;
     padding-left: 20px;
     text-align: center;
@@ -17,6 +16,11 @@
     color: #ffffff;
     text-decoration: none;
 }
+.item:hover{
+    font-size: 22px;
+}
 .active {
     color: gold;
+    font-size: 22px;
+    text-decoration: none;
 }

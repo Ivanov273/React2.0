@@ -1,5 +1,6 @@
 import React from "react";
 import {Field, reduxForm} from "redux-form";
+import s from './ProfileInfo.module.css'
 import {
     renderFieldProfile,
     renderFieldProfileInput
@@ -7,7 +8,7 @@ import {
 
 const ProfileEdit = ({handleSubmit, profile,error}) => {
     return <form onSubmit={handleSubmit}>
-        <button>Save</button>
+        <button className={s.button}>Сохранить</button>
         {error &&<div>{error}</div>}
         <div>
             <b>Полное имя - </b> <Field name='fullName' component={renderFieldProfileInput} type='input' validate={[]}/>

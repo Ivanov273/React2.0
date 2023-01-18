@@ -12,9 +12,9 @@ let Paginator = (props) => {
     let leftPortionNumber = (portionNumber-1)*props.portionsize + 1
     let rightPortionNumber = portionNumber*props.portionsize
 
-    return <div>
+    return <div className={s.mainPaginator}>
         { portionNumber>1 &&
-            <button onClick={()=>{SetportionNumber(portionNumber-1)}}> Prev</button>
+            <button className={s.button} onClick={()=>{SetportionNumber(portionNumber-1)}}> Prev</button>
         }
             {page
                 .filter(p=>p>=leftPortionNumber && p<=rightPortionNumber)
@@ -24,7 +24,7 @@ let Paginator = (props) => {
                              onClick={() => props.SetUserPage(p)}>{p}</span>
             })}
         {portionCount > portionNumber &&
-            <button onClick={()=>{SetportionNumber(portionNumber+1)}}>Next</button>
+            <button className={s.button} onClick={()=>{SetportionNumber(portionNumber+1)}}>Next</button>
         }
     </div>
 }

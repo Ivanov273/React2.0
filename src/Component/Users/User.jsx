@@ -7,21 +7,21 @@ let User = ({user,isfetchingprogress,followUsersThunkCreator,unfollowUsersThunkC
     return <div>
                 <div className={s.main}>
                     <div className={s.users}>
-                        <NavLink to={'/profile/' + user.id}>
+                        <NavLink className={s.user_img} to={'/profile/' + user.id}>
                         <img className={s.usersPhoto} src={user.photos.small != null ? user.photos.small : userPhoto}/>
                         </NavLink>
                             <div className={s.button}>
-                            {user.followed ? <button disabled={isfetchingprogress.some(id=> id ===user.id)} onClick={() => {
+                            {user.followed ? <button className={s.buttonUNFollow} disabled={isfetchingprogress.some(id=> id ===user.id)} onClick={() => {
                            followUsersThunkCreator(user.id)
 
-                            }}>unfollow</button> : <button disabled={isfetchingprogress.some(id=> id ===user.id)} onClick={() => {
+                            }}>Отписаться</button> : <button className={s.buttonFollow} disabled={isfetchingprogress.some(id=> id ===user.id)} onClick={() => {
                                 unfollowUsersThunkCreator(user.id)
-                            }}>follow</button>}
+                            }}>Подписаться</button>}
                         </div>
                     </div>
                     <div className={s.item}>
                         <div className={s.one}>{user.name}</div>
-                        <div className={s.two}>}</div>
+                        <div className={s.two}></div>
                         <div className={s.three}></div>
                         <div className={s.foor}></div>
                     </div>
