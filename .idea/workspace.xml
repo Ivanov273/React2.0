@@ -5,6 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f2301f02-2065-47af-bac9-86d4fe362600" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/api/Api_reset.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/api/for_it_inc/fake.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Component/Profile/PofileInfo/ProfileInfo.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Component/Profile/PofileInfo/ProfileInfo.jsx" afterDir="false" />
     </list>
@@ -151,6 +153,7 @@
       <workItem from="1673935029250" duration="7974000" />
       <workItem from="1674027289960" duration="8429000" />
       <workItem from="1674067607939" duration="1781000" />
+      <workItem from="1677434526461" duration="775000" />
     </task>
     <servers />
   </component>

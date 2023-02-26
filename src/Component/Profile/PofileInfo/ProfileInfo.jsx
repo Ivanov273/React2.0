@@ -29,8 +29,6 @@ const ProfileInfo = ({
     }
     const str = 'Hey fellow warriors'
     const rez=str.split(' ')
-
-
 function  poe(r) {
         let arr=[]
     for (var i = 0; i < r.length; i++) {
