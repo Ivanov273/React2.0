@@ -27,6 +27,26 @@ const ProfileInfo = ({
              Seteditmode(true)
          })
     }
+    const str = 'Hey fellow warriors'
+    const rez=str.split(' ')
+
+
+function  poe(r) {
+        let arr=[]
+    for (var i = 0; i < r.length; i++) {
+
+        if (r[i].length > 5) {
+           var e = r[i].split('').reverse('').join('')
+            arr.push(e+' ')
+
+        } else arr.push(r[i])
+    }
+    return console.log(arr)
+}
+    poe(rez)
+    //console.log(rez[0])//.find(el=>el.length>5))
+    console.log(rez.length)
+
     return <div>
 
         <div>
