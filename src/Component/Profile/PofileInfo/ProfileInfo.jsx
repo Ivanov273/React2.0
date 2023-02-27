@@ -27,23 +27,27 @@ const ProfileInfo = ({
              Seteditmode(true)
          })
     }
-    const str = 'Hey fellow warriors'
-    const rez=str.split(' ')
-function  poe(r) {
-        let arr=[]
-    for (var i = 0; i < r.length; i++) {
+    function nextInLine(arr, item) {
+        // Only change code below this line
 
-        if (r[i].length > 5) {
-           var e = r[i].split('').reverse('').join('')
-            arr.push(e+' ')
+        arr.push(item)
+       //arr.shift()
+        //arr.unshift()
+        const item2 =arr.shift()
+        //arr.unshift()
+        return item2
 
-        } else arr.push(r[i])
+        //item=arr[0]
+        // Only change code above this line
     }
-    return console.log(arr)
-}
-    poe(rez)
-    //console.log(rez[0])//.find(el=>el.length>5))
-    console.log(rez.length)
+
+// Setup
+    //let testArr = [2];
+    let testArr = [2,3,4,5,8];
+// Display code
+    console.log("Before: " + JSON.stringify(testArr));
+    console.log(nextInLine(testArr, 5));
+    console.log("After: " + JSON.stringify(testArr));
 
     return <div>
 
